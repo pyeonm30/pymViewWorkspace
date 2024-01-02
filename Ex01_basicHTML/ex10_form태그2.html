@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <p>code: <input type="text" pattern="[a-zA-Z].+[0-9]"></p> <!-- 정규표현식 으로 입력양식 제한 -->
+    <p>id: <input type="text" name="id" placeholder="id" autofocus></p> <!-- 페이지가 열리면 자동으로 포커싱 -->
+    <p>password: <input type="text" name="pwd" required></p> <!-- 유효성검사 / 필수값 지정 -->
+    <input type="submit"> <input type="reset">
+  </form>
+</body>
+
+</html>

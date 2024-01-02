@@ -8,6 +8,73 @@
 </head>
 
 <body>
+  <!-- 인라인 자바스크립트 : 보통 특정 이벤트를 호출 
+    alert(); // 화면에 알람창 띄워준다 
+-->
+  <!-- 버튼 1  -->
+  <button onclick="alert('안녕!')">눌러보세요!</button>
+
+
+  <form>
+    <!-- 버튼 2 -->
+    <input type="button" value="인사" onclick="alert('hello!')">
+    <!-- <input type="submit" value="입장"> -->
+
+
+    <h3>색상(단일선택)</h3>
+    <p>
+      <!-- radio 버튼 안에서 name 이라는 속성으로 다중1선택 가능하게 한다 
+      같은 이름 값을 가지면 다중 선택 불가능 
+      value 는 선택했을때 값을 서버로 보내줌 
+      -->
+      <input type="radio" name="check1" value="red"> red <!-- 같은 name값을 가지면 택1의 조건 설정이 됨 (grouping)-->
+      <input type="radio" name="check1" value="green"> green
+      <input type="radio" name="check1" value="blue"> blue
+    </p>
+    <h3>사이즈(단일선택)</h3>
+    <p>
+      <input type="radio" name="check2" value="L"> Large
+      <input type="radio" name="check2" value="M" checked> Medium <!-- checked : 기본값 부여 -->
+      <input type="radio" name="check2" value="S"> Small
+    </p>
+    <h3>수량(다중선택)</h3> <!-- http://localhost/order.php?check1=green&check2=L&dum=1&dum=5&dum=10 -->
+    <p>
+      <!-- 서버 값을 넘길때 항상 배열로 넘김  -->
+      <input type="checkbox" name="dum" value="1" checked> 1
+      <input type="checkbox" name="dum" value="5"> 5
+      <input type="checkbox" name="dum" value="10"> 10
+      <input type="checkbox" name="dum" value="50"> 50
+      <input type="checkbox" name="dum" value="100"> 100
+    </p>
+
+    <!--  value는 값 선택했을 시 서버에서 전달하는 데이터  
+  String color ="1";
+-->
+    <select name="color">
+      <option value="1">red</option> <!-- value : 컴퓨터에게 전송할 데이터-->
+      <option value="2">green</option>
+      <option value="3">blue</option>
+    </select>
+
+    <br><br>
+
+    <!-- required 하면 submit 버튼 누르기 전에 값
+       필수로 입력 받기 전까지는 전송이 안되게 막아줌  -->
+
+    <!--   String name ="사용자가 입력한 값 "; -->
+    이름: <input type="text" name="name">
+    나이 : <input type="number" name="age">
+    핸드폰번호: <input type="tel" name="phone">
+    이메일: <input type="email" required><br>
+    <input type="file" name="profile"><br>
+    <p>type hidden 사용자에게 보여주지않고 서버로 데이터만 넘겨줌</p>
+    <input type="hidden" name="ip" value="접속ip정보">
+
+    <!-- 버튼 3 -->
+    <input type="submit" onclick="alert('hello!')">
+
+  </form>
+
 
 </body>
 
