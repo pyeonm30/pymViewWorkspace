@@ -14,16 +14,13 @@
       width: 320px;
       height: 240px;
       border: 1px solid black;
-      /* overflow: hidden; */
+      display: flex;
     }
 
     .child {
-      width: 100%;
-      height: 100%;
-      background-image: url('./images/coffee.jpg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      object-fit: cover;
+      flex: 1;
+      background: url('./images/coffee.jpg') no-repeat center;
+      background-size: cover;
     }
   </style>
 </head>
