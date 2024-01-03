@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      /* 상하좌우 */
+      margin: 0;
+      /* 기본값 viewWidth */
+      /* width: 100vw; */
+    }
+
+    div {
+      border: 1px solid palevioletred;
+      width: 80px;
+      height: 80px;
+      padding: 10px;
+    }
+
+    #c {
+      /* 디폴트 값은  box-sizing: content-box; 이다  */
+      box-sizing: content-box;
+    }
+
+    #d {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="c"> 박스 1</div>
+  <div>박스 2</div>
+  <div id="d"> 박스 3</div>
+
+</body>
+
+</html>

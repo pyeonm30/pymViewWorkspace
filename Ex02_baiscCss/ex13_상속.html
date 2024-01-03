@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      font-size: 14px;
+    }
+
+    body {}
+
+    .container {
+      color: red;
+      border: 1px solid black;
+    }
+
+    .inner-box {
+      border: 1px solid blue;
+    }
+
+    p {
+      border: 1px solid pink;
+      font-size: 0.5em;
+    }
+
+    .desc {
+      line-height: 1.8;
+      letter-spacing: 0.1rem
+    }
+
+    .box1 {
+      border: 1px solid black;
+      padding: 10px 20px;
+    }
+
+    .text1 {
+      font-size: 24px;
+      height: 3em;
+      background-color: pink;
+    }
+
+    * {
+      color: red;
+    }
+
+    div {
+      color: yellow;
+    }
+
+    #text-id {
+      color: rgb(56, 4, 114);
+      /* 1은 불툽명 ~ 0 에 가까울 수록 투명 */
+      /* opacity: 0.22; */
+    }
+
+    .text-class {
+      /* 알파값: opacity */
+      color: rgba(134, 4, 4, 0.5) !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    바깥에 있는 박스입니다.
+    <div class="inner-box">
+      <p>안쪽에 있는 박스입니다.</p>
+      <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, eveniet!
+      </p>
+    </div>
+  </div>
+
+
+  <div class="box1">
+
+    <div class="text1" style="background-color: cadetblue;">
+      이 박스의 세로 사이즈는 몇 px 일까요?
+    </div>
+  </div>
+  <hr>
+
+  <div class="text-class" id="text-id">
+    텍스트 입니다.
+  </div>
+
+</body>
+
+</html>

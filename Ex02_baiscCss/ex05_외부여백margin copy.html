@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #eee;
+    }
+
+    p {
+      border: 5px solid red;
+      background: yellow;
+    }
+
+    .box1 {
+      /*상,하,좌,우*/
+      margin: 20px;
+    }
+
+    .box2 {
+      /*상하, 좌우*/
+      margin: 20px 50px;
+    }
+
+
+    .box3 {
+      /*상, 좌우, 하*/
+      margin: 20px 50px 30px;
+    }
+
+
+    .box4 {
+      /*상 우   하   좌*/
+      margin: 20px 30px 50px 70px
+    }
+  </style>
+</head>
+
+<body>
+  <p class="box1">박스의 상,하,좌,우에 20px의 여백이 지정된경우</p>
+
+  <p class="box2">박스의 상,하에 20px의 여백이, 좌우에는 50px의 여백이 지정된경우</p>
+
+  <p class="box3">박스의 상에 20px, 좌우에는 50px, 하에 30px의 여백이 지정된경우</p>
+
+
+  <p class="box4">박스의 상에 20px, 우에는 30px, 하에 50px, 좌에 70px의 여백이 지정된경우</p>
+</body>
+
+</html>

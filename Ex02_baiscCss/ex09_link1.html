@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* :가상선택자
+      기존 태그에 없는 값을 객체로 만들어준다 
+    */
+    /* 한번도 클릭하지 않는 링크  */
+    a:link {
+      color: red;
+    }
+
+    /* 클릭한 링크  */
+    a:visited {
+      color: green;
+    }
+
+    /* 마우스를 가져다놨을때 */
+    a:hover {
+      color: blue;
+    }
+
+    /* 클릭했을때  */
+    a:active {
+      color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <p><a href="https://www.naver.com" target="_blank">여기가
+      링크입니다.</a>
+  </p>
+</body>
+
+</html>
