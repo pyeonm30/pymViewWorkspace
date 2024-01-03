@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer {
+      border: 1px solid red;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .item1 {
+      background: red;
+      /* width: 100px; */
+      width: calc(50px + 50px);
+      height: 50px;
+    }
+
+    /* 100% 부모 => body => 100vw, vh => outer => item2 */
+
+    .item2 {
+      background: blue;
+      /* 숫자와 연산자 기호 사이에 띄어쓰기 필수!!  */
+      width: calc(100% - 120px);
+      height: 50px;
+    }
+
+    .item3 {
+      background: green;
+      width: calc(2 * 100px);
+      height: 50px;
+    }
+
+    .item4 {
+      background: orange;
+      width: calc(100% / 4);
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <p>50px + 50px</p>
+    <div class="item1"></div>
+  </div>
+  <div class="outer">
+    <p>100% - 120px</p>
+    <div class="item2"></div>
+  </div>
+  <div class="outer">
+    <p>2*100px</p>
+    <div class="item3"></div>
+  </div>
+  <div class="outer">
+    <p>100%/4</p>
+    <div class="item4"></div>
+  </div>
+</body>
+
+</html>

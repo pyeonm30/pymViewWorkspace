@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      /* 수평 중앙 정렬  */
+      text-align: center;
+
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+      /* text-align: center; */
+      margin: 30px 0;
+    }
+
+
+    /*  수직 중앙 정렬 line-hight: 높이만큼 주면됨  */
+    .box {
+      width: 600px;
+      height: 120px;
+      /* 컨텐츠를 중앙 정렬 시켜줌  */
+      margin: auto;
+      /* 글자의 높이  */
+      line-height: 120px;
+      /* border: 1px solid black; */
+      background-image: linear-gradient(red, orange);
+    }
+
+    span {
+      font-size: 32px;
+      font-weight: 600;
+      color: #fff;
+      display: inline-block;
+    }
+
+    .box:hover span {
+      transform: translateY(-20px)
+    }
+
+    span:nth-child(1) {
+      transition: all 0.4s ease-in-out 0s;
+    }
+
+    span:nth-child(2) {
+      transition: all 0.4s ease-in-out 0.1s;
+    }
+
+    span:nth-child(3) {
+      transition: all 0.4s ease-in-out 0.2s;
+    }
+
+    span:nth-child(4) {
+      transition: all 0.4s ease-in-out 0.3s;
+    }
+
+    span:nth-child(5) {
+      transition: all 0.4s ease-in-out 0.4s;
+    }
+
+    span:nth-child(6) {
+      transition: all 0.4s ease-in-out 0.5s;
+    }
+
+    span:nth-child(7) {
+      transition: all 0.4s ease-in-out 0.6s;
+    }
+
+    span:nth-child(8) {
+      transition: all 0.4s ease-in-out 0.7s;
+    }
+
+    span:nth-child(9) {
+      transition: all 0.4s ease-in-out 0.8s;
+    }
+
+
+
+
+
+    #s1 {
+      transition: all 0.4s ease-in-out 0s;
+    }
+
+    #s2 {
+      transition: all 0.4s ease-in-out 0.1s;
+    }
+
+    #s3 {
+      transition: all 0.4s ease-in-out 0.2s;
+    }
+
+    #s4 {
+      transition: all 0.4s ease-in-out 0.3s;
+    }
+
+    #s5 {
+      transition: all 0.4s ease-in-out 0.4s;
+    }
+
+    #s6 {
+      transition: all 0.4s ease-in-out 0.5s;
+    }
+
+    #s7 {
+      transition: all 0.4s ease-in-out 0.6s;
+    }
+
+    #s8 {
+      transition: all 0.4s ease-in-out 0.7s;
+    }
+
+    #s9 {
+      transition: all 0.4s ease-in-out 0.8s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="title"> 박스 위에 마우스를 올려보세요!</div>
+  <div class="box">
+    <span>T</span>
+    <span>R</span>
+    <span>A</span>
+    <span>N</span>
+    <span>S</span>
+    <span>F</span>
+    <span>O</span>
+    <span>R</span>
+    <span>M</span>
+  </div>
+
+
+
+  <br>
+
+  <div class="box">
+    <span id="s1">T</span>
+    <span id="s2">R</span>
+    <span id="s3">A</span>
+    <span id="s4">N</span>
+    <span id="s5">S</span>
+    <span id="s6">F</span>
+    <span id="s7">O</span>
+    <span id="s8">R</span>
+    <span id="s9">M</span>
+  </div>
+
+</body>
+
+</html>
