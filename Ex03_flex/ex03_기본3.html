@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .parent {
+      border: 5px solid green;
+      height: 500px;
+      display: flex;
+      font-size: 2em;
+      color: #fff;
+
+      align-items: flex-start;
+      /* 자식 요소 만 적용  */
+      /* flex: 1; */
+    }
+
+    .parent div {
+      background-color: crimson;
+      margin: 0 10px;
+      width: 200px;
+    }
+
+
+    .child1 {
+      height: 100px;
+      /* align-self: flex-end; */
+      /* order: -100; */
+      /* flex-grow: 1; */
+      /* flex-shrink: 1; */
+      flex-basis: 100px;
+
+    }
+
+    .child2 {
+      height: 350px;
+      /* flex-grow: 8; */
+      /* flex-shrink: 0.5; */
+      flex-basis: 200px;
+    }
+
+    .child3 {
+      height: 250px;
+      /* flex-grow: 1; */
+      /* order: -1; */
+      /* flex-shrink: 2; */
+      flex-basis: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <div class="child1">1</div>
+    <div class="child2">2</div>
+    <div class="child3">3</div>
+  </div>
+
+</body>
+
+</html>
