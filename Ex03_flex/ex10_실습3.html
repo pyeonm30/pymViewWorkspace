@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .container {
+      /* border: 1px solid blue; */
+      background-color: antiquewhite;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      /* 컬럼일때 자식요소 flex:1  너비값이 아니라 높이값을  */
+    }
+
+    header {
+      background-color: tomato;
+      flex: 1;
+    }
+
+    section {
+      /* border: 1px solid red; */
+      flex: 8;
+      display: flex;
+    }
+
+    /* 텍스트들 정렬  */
+    section article,
+    header,
+    footer,
+    .main>p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left {
+      background-color: yellow;
+      /* 부모가 가로정렬일때 flex 너비  */
+      flex: 1;
+    }
+
+    .main {
+      flex: 4;
+      background-color: lightgray;
+      padding: 0 20px;
+    }
+
+
+    .right {
+      background-color: greenyellow;
+      flex: 1;
+    }
+
+    footer {
+      flex: 1;
+      background-color: aquamarine;
+    }
+
+    @media(max-width:768px) {
+      section {
+        flex-direction: column;
+      }
+
+      .main {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>header</header>
+    <section>
+      <article class="left">left</article>
+      <article class="main">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit necessitatibus, officia ipsam repudiandae
+          voluptatem sint, quod quos aut odio blanditiis obcaecati at facere sequi vitae quis architecto natus!
+          Mollitia, reprehenderit.</p>
+      </article>
+      <article class="right">right</article>
+    </section>
+    <footer>footer</footer>
+  </div>
+
+</body>
+
+</html>
