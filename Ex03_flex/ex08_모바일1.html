@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 반응형 웹을 만들 수 있다  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style>
+    .parent {
+      border: 3px solid black;
+      width: 800px;
+      display: flex;
+      /* background-color: bisque; */
+    }
+
+    .parent div {
+      height: 100px;
+      /* width: 100px; */
+      text-align: center;
+      line-height: 100px;
+      color: #fff;
+      font-size: 2em;
+
+    }
+
+    .child1 {
+      background-color: royalblue;
+      flex: 1;
+    }
+
+    .child2 {
+      background-color: palevioletred;
+      flex: 8;
+    }
+
+    .child3 {
+      background-color: yellowgreen;
+      flex: 1;
+
+    }
+
+    /* viewWidth 가 1~ 768px 까지 보여주는 화면 
+      768이하 화면 이면 아래 media 실행 
+      [1] 고정적인 width : 100% 변경
+      [2] flex row -> column 변경 
+    */
+    @media(max-width:768px) {
+      .parent {
+        width: 100%;
+        flex-direction: column-reverse;
+      }
+
+      /* .child1 {
+        order: 3;
+      }
+
+      .child2 {
+        order: 2;
+      }
+
+      .child3 {
+        order: 1;
+
+      } */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <div class="child1">1</div>
+    <div class="child2">2</div>
+    <div class="child3">3</div>
+  </div>
+
+</body>
+
+</html>
