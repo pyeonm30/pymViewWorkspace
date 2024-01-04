@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section {
+      /* 보통 컨텐츠 영역은 1200px ~ 1300px */
+      width: 1200px;
+      /* border: 1px solid black; */
+      display: flex;
+    }
+
+    article {}
+
+    .content1 {
+      background-color: yellow;
+      padding: 20px;
+      flex: 1;
+    }
+
+    .content2 {
+      flex: 1;
+    }
+
+    .content2 div {}
+
+    .sub1 {
+      background-color: lightblue;
+      padding: 20px;
+    }
+
+    .sub2 {
+      background-color: lightcoral;
+      padding: 20px;
+    }
+
+    @media(max-width: 768px) {
+      body {
+        align-items: flex-start;
+      }
+
+      section {
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <article class="content1">
+      <h2>content1</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident non voluptatibus eum, iusto ducimus dicta
+        asperiores dolorem atque laboriosam exercitationem possimus omnis dolor accusamus id? Obcaecati ratione quo
+        dignissimos sunt quaerat soluta. Voluptas alias, natus reiciendis recusandae facere minus iure architecto
+        eligendi tempora consequatur magnam amet corrupti modi fugiat magni.</p>
+    </article>
+    <article class="content2">
+      <div class="sub1">
+        <h2>sub1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et corporis magnam reiciendis, doloribus velit sit
+          quod ab sed a tempora porro dignissimos fugit! Id expedita dolorem vel temporibus voluptas similique!</p>
+      </div>
+      <div class="sub2">
+        <h2>sub2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et corporis magnam reiciendis, doloribus velit sit
+          quod ab sed a tempora porro dignissimos fugit! Id expedita dolorem vel temporibus voluptas similique!</p>
+      </div>
+    </article>
+  </section>
+
+</body>
+
+</html>
