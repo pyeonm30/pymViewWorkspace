@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #eee;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    header {
+      /* border: 1px solid black; */
+      background-color: #fff;
+      display: flex;
+      padding: 20px;
+    }
+
+    .log {
+      flex: 1;
+      margin: auto;
+      text-align: center;
+    }
+
+    .log img {
+      width: 100%;
+      height: 100%;
+      /* width: 300px; */
+      /* height: 150px; */
+    }
+
+    .gnb {
+      /* display: flex;
+      align-items: center;
+      justify-content: center; */
+      text-align: center;
+      margin: auto;
+      flex: 6;
+    }
+
+    .gnb a {
+      margin-right: 15px;
+    }
+
+    .search {
+      flex: 1;
+      text-align: center;
+      margin: auto;
+    }
+
+    @media(max-width:768px) {
+      header {
+        flex-direction: column;
+      }
+
+      .log img {
+        width: 80%;
+        height: 80%;
+      }
+
+      .search {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="log">
+      <img src="images/logo.png" alt="로고">
+    </div>
+    <div class="gnb">
+      <a href="#none">Home</a>
+      <a href="#none">About Us</a>
+      <a href="#none">Service</a>
+      <a href="#none">Contact Us</a>
+      <a href="#none">Blog</a>
+    </div>
+    <div class="search">
+      <input type="search" placeholder="Search">
+    </div>
+  </header>
+
+</body>
+
+</html>
