@@ -9,13 +9,3 @@ body{
   height: 100vh;
 }
 
-
-/* 모바일 환경 */
-@media screen and (max-width: 767px){
-  
-}
-
-/* 테블릿 환경  */
-@media (min-width:768px) and(max-width: 1024px){
-  
-}
