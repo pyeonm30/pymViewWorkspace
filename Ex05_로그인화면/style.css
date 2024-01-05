@@ -23,7 +23,7 @@ main{
   /* border: 2px solid black; */
   box-sizing: border-box;
   width: 600px;
-  height: 400px;
+  /* height: 400px; */
   background-color: #fff;
   border-radius: 5px;
   padding: 30px;
@@ -69,6 +69,7 @@ main{
   display: flex;
 }
 .field label{
+  margin-left: 5px;
   flex:1;
 }
 .field input{
@@ -83,5 +84,28 @@ main{
   border-radius: 3px;
 /* 한개 속성 이동할때 구지 flex 박스 만들필요 없이 float 로 가능하다 */
   float: right;
+}
+/* 
+[1] 고정 width 값을 100%
+[2] flex : row -> column 
+*/
+@media(max-width : 768px){
+  .login-form{
+    width: 100%;
+  }
+  .sns-login{
+    flex-direction: column;
+  }
+  .btn{
+    margin: 5px 0;
+  }
+  .field{
+    flex-direction: column;
+    margin: 10px 0 ;
+  }
+  .btn-login{
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 
