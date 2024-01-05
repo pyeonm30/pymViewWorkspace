@@ -7,12 +7,67 @@ button{ cursor: pointer; outline: none;}
 body{
   margin: 0;
   height: 100vh;
+  font-size: 15px;
+  line-height: 1.5em;
 }
-section{}
-.media{}
-.media img{}
-.media body{}
-.media h3{}
-.media p{}
+section{
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+}
+.media{
+  background-color: #eee;
+  width: 600px;
+  display: flex;
+  box-sizing: border-box;
+  padding: 10px;
+}
+.media img{
+  width: 100px;
+  flex: 2;
+  /* height: 100px; */
+  margin-right: 10px;
+}
+.media body{
+  flex: 5;
+}
+/* .media h3{} */
+/* .media p{} */
 
 
+/* 모바일 환경 */
+@media screen and (max-width: 767px){
+  section{
+    flex-direction: column;
+  }
+  .media{
+    width: 100%;
+    margin-top: 10px;
+    flex-direction: column;
+    
+  }
+  .media img{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .media:first-child{
+    margin-top: 0;
+  }
+}
+
+/* 테블릿 환경  */
+@media (min-width:768px) and (max-width: 1024px){
+  section{
+    flex-direction: column;
+  }
+  .media{
+    width: 100%;
+    margin-top: 10px;
+  }
+  .media img{
+    width: 30%;
+  }
+  .media:first-child{
+    margin-top: 0;
+  }
+}
