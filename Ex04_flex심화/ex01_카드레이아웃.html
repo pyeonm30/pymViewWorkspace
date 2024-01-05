@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: scroll;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    .card-items {
+      /* margin: 20px 0; */
+      /* border: 2px solid black; */
+      width: 1200px;
+      height: 60%;
+      display: flex;
+      justify-content: space-evenly;
+
+      /* flex-wrap: wrap; */
+      /* box-sizing: border-box; */
+
+    }
+
+    .card {
+      border: 2px solid pink;
+      width: 300px;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+
+    }
+
+    .card p {
+      overflow: auto;
+    }
+
+    @media(max-width: 768px) {
+      .card-items {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: flex-start;
+
+      }
+
+      .card {
+        margin: 10px;
+        overflow: none;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="card-items">
+    <div class="card">
+      <h3>Card #01</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, veritatis, odio repellat commodi beatae
+        sint id magni alias quis voluptatum, molestias ipsa vel sapiente provident architecto minima praesentium dolor
+        suscipit!
+      </p>
+      <img src="http://placehold.it/300x150" alt="이미지">
+    </div>
+    <div class="card">
+      <h3>Card #02</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, veritatis, odio repellat commodi beatae
+        sint id magni alias quis voluptatum
+      </p>
+      <img src="http://placehold.it/300x150" alt="이미지">
+    </div>
+    <div class="card">
+      <h3>Card #03</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, veritatis, odio repellat commodi beatae
+        sint id magni alias quis voluptatum, molestias ipsa vel sapiente provident architecto minima praesentium dolor
+        suscipit!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, veritatis, odio repellat commodi beatae
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, veritatis, odio repellat commodi beatae
+        sint id magni alias quis voluptatum, molestias ipsa vel sapiente provident architecto minima praesentium dolor
+        suscipit!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, veritatis, odio repellat commodi beatae
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, veritatis, odio repellat commodi beatae
+        sint id magni alias quis voluptatum, molestias ipsa vel sapiente provident architecto minima praesentium dolor
+        suscipit!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, veritatis, odio repellat commodi beatae
+
+      </p>
+      <img src="http://placehold.it/300x150" alt="이미지">
+    </div>
+  </div>
+</body>
+
+</html>
