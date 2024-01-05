@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .parent {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .child {
+      background-color: palevioletred;
+      margin: 5px;
+      border-radius: 3px;
+      font-size: 2em;
+      height: 200px;
+      line-height: 200px;
+      text-align: center;
+      /* flex: 1; */
+
+      /* basis로 값을 주지않으면 부모flex wrap 해도
+      적용이 안된다 
+      */
+      /* flex-basis: 300px; */
+
+      /* grow shrink basis */
+      flex: 1 0 300px;
+      width: 300px;
+      /* flex-basis: 300px; */
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="parent">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+  </div>
+
+</body>
+
+</html>
