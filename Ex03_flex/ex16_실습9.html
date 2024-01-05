@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .container {
+      /* border: 10px solid black; */
+      box-sizing: border-box;
+      background-color: bisque;
+      /* border: 1px solid; */
+      /* 100vh + 6px */
+      height: 100%;
+      /* height: calc(100% - 6px); */
+      /* box-sizing: content-box; */
+      /* padding: 50px; */
+      overflow: hidden;
+
+    }
+
+    header {
+      background-color: palevioletred;
+      /* flex: 1; */
+      height: 100px;
+    }
+
+    section {
+      height: calc(100vh - 200px);
+      /* flex: 8; */
+      display: flex;
+
+    }
+
+    article {
+      background-color: pink;
+      flex: 2;
+    }
+
+    aside {
+      flex: 8;
+      background-color: white;
+    }
+
+    nav {
+      background-color: plum;
+      width: 100px;
+      /* flex: 1; */
+    }
+
+    footer {
+      height: 100px;
+      /* flex: 1; */
+      background-color: palevioletred;
+    }
+
+    header,
+    article,
+    aside,
+    nav,
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 
+    [1] 콘텐츠 너비 width: 1200- 1300px ~ > 100%
+    [2] flex 박스 row -> flex-direction : cloumn
+    */
+    @media screen and (max-width: 768px) {
+      section {
+        flex-direction: column;
+      }
+
+      nav {
+        flex: 2;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>header</header>
+    <section>
+      <article>article</article>
+      <aside>aside</aside>
+      <nav>nav</nav>
+    </section>
+    <footer>footer</footer>
+  </div>
+
+</body>
+
+</html>
