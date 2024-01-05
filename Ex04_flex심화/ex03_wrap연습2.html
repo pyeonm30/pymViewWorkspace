@@ -28,7 +28,12 @@
       height: 150px;
       line-height: 150px;
       text-align: center;
-      width: calc(100% / 2 - 30px);
+      /* 부모 100% 에서 2칸씩만 자식 요소 출력
+        마진은 외부 여백이니깐 그만큼 빼야한다!!
+        근데 마진이 15면 상하좌우 다 15씩이니깐
+        상하 합쳐서 30px 를 빼줘야한다
+      */
+      width: calc(100% / 2 - (15px*2));
     }
   </style>
 </head>
