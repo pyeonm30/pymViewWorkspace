@@ -9,20 +9,113 @@ body{
   margin: 0;
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
+  background-color: black;
+  font-size: 15px;
 }
 input,textarea,button{
   font-family: 'Montserrat', sans-serif;
 }
 header{
   height: 60px;
+  background-color: #6c5ce7;
+  display: flex;
+  justify-content: center;
+  align-items: center;;
 }
 nav{
+  /* border: 3px solid blue; */
   width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .logo img{
   filter: invert();
+  width: 100px;
+  margin: 0 10px;
 }
-.gnb{}
-.gnb a{}
-.sns{}
-.sns i{}
+.gnb{
+  /* 나중에 모바일 고려해서 flex */
+  display: flex;
+
+}
+.gnb a{
+  color: #fff;
+  margin: 10px;
+}
+.sns{
+  padding: 8px;
+}
+.sns i{
+  color: #fff;
+  margin: 5px;
+}
+.gnb a:hover , .sns i:hover{
+  color: bisque;
+}
+@media screen and (max-width: 768px){
+  header{
+    /* 내용물(자식요소) 의 크기에 맞춰 자동 조절 된다  */
+    height: auto;
+  }
+
+  nav{
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+  }
+  .logo{
+    width: 100%;
+    padding: 10px;
+  }
+  /* 처음에는 gnb, sns가 보이지 않는다 */
+
+  .gnb , .sns{
+    display: none;
+  }
+  /* 버튼을 클랙했을때 .gnb, .sns 클래스 태그에 .on 붙여주기 */
+  /*  다시 보이게 하는 작업  */
+  .gnb.on, .sns.on{
+    display: flex;
+  }
+  .gnb{
+    flex-direction: column;
+    text-align: center;
+  }
+  /* a 태그는 인라인 요소 : 공간 x 마진 패딩  */
+  .gnb a{
+    margin: 10px;
+  }
+  .sns{
+    width: 100%;
+    justify-content: center;
+    /* text-align: center; */
+    background-color: #a29bfe;
+  }
+
+  .trigger{
+    /* border: 2px solid black; */
+    width: 25px;
+    height: 15px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .trigger span{
+    background-color:  bisque;
+    height: 3px;
+    width: 100%;
+    /* display: block; */
+    position: absolute;
+  }
+  .trigger span:nth-child(1){
+    top: 0;
+  }
+  .trigger span:nth-child(2){
+    top: 50%;
+  }
+  .trigger span:nth-child(3){
+    top:100%
+  }
+
+}
