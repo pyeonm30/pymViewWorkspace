@@ -13,8 +13,9 @@ body{
   margin: 0;
   height: 100vh;
   font-family: 'Noto Sans KR' , sans-serif;
-  /* 세션을 중앙으로 만들고 싶다 */
   font-size: 15px;
+  font-weight: 300;
+  /* normal 400 bold 600  */
 }
 button,input,textarea,select{
   font-family: 'Noto Sans KR' , sans-serif;
@@ -22,7 +23,8 @@ button,input,textarea,select{
 
 section{
   width: 1200px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+    /* 세션을 중앙으로 만들고 싶다 요소가 한개밖에 없을때는 그냥 margin: auto*/
   margin: auto;
 }
 /* header */
@@ -68,13 +70,23 @@ form .row{
   border: 1px solid #ddd;
   padding: 7px;
 }
+.row .field input:hover,
+textarea :hover,
+select :hover{
+  border: 1px solid skyblue;
+  box-shadow: 0 0 5px skyblue;
+}
+.row .field input:focus , textarea:focus {
+  border: 1px solid skyblue;
+  box-shadow: 0 0 5px skyblue;
+}
 form label em{ 
   color: red;
 }
-form textarea{}
+/* form textarea{} */
 
 /* policy */
-.policy{}
+/* .policy{} */
 .policy h4{
   margin: 10px 0;
 }
@@ -91,12 +103,14 @@ form textarea{}
   padding: 10px 50px;
   border-radius: 3px;
   background-color: skyblue;
-  color: white;
   display: block;
   margin: auto;
   margin-top: 20px;
 }
-
+.btn-sumbit:hover{
+  background-color: royalblue;
+  color: #fff;
+}
 
 
 
