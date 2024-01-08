@@ -22,7 +22,7 @@ button,input,textarea,select{
   font-family: 'Montserrat' , sans-serif;
 }
 section{
-  border: 2px solid black;
+  /* border: 2px solid black; */
   width: 950px;
   /* height: 600px; */
   margin: auto;
@@ -71,6 +71,7 @@ section{
   background-size: 22px;
   width: 300px;
   font-size: 18px;
+  box-sizing: border-box;
 }
 .search-box button{
   background-color: crimson;
@@ -82,5 +83,99 @@ section{
   padding: 13px 60px;
   font-size: 18px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.438);
+
+}
+
+/* items */
+.items{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.item{
+  width: 310px;
+  height: 200px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.item img{
+  width: 100%;
+}
+
+/* description */
+.desc{
+  position: absolute;
+  background-color: rgba(0,0,0,0.3);
+  height: 60px;
+  width: 100%;
+  left:0;
+  /* bottom: 5px; */
+  bottom: -60px;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+
+  transition: 0.3s;
+
+}
+.item:hover .desc{
+  bottom: 0px;
+}
+
+.desc h6{
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.desc .like{
+  display: flex;
+  justify-content: space-between;
+}
+.like span{
+  font-size: 13px;
+}
+.like span:nth-child(1) .fa{
+  color: crimson;
+}
+
+
+@media (min-width: 768px) and (max-width:1024px) {
+  section{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .item{
+    width: 49%;
+    margin-right: 2px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  section{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .gnb{
+    text-align: center;
+  }
+  .search-box{
+    flex-direction: column;
+  }
+  .search-box input{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .item{
+    width: 100%;
+    height: auto;
+  }
+  .item:hover .desc{
+    bottom: 5px;
+  }
+
 
 }
