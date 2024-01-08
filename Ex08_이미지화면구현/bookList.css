@@ -91,3 +91,35 @@ section{
 .item .badge.only{
   background-color: lightgreen;
 }
+
+@media (max-width: 768px){
+  section{
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  .list-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .list-header h1::after{
+    content:"\f103";
+  }
+  .items{
+    flex-direction: column;
+  }
+  .item{
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+    height: 80%;
+  }
+  .item:nth-child(3){
+    order: -1;
+  }
+  
+
+}
