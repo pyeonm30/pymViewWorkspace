@@ -113,14 +113,22 @@ form label em{
 }
 
 
-
-
-
-
-
-
-
 /* 모바일 환경 */
 @media screen and (max-width: 767px){
-  
+  section{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .consulting-header h1{
+    font-size: 22px;
+  }
+  form .row{
+    flex-direction: column;
+  }
+  .row .field{
+    margin: 5px 0;
+  }
+  .btn-sumbit{
+    width: 100%;
+  }
 }
