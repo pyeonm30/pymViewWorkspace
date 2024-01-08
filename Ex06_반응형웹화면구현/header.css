@@ -1,2 +1,28 @@
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap'); 
+
+/* reset CSS */
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{ margin: 0;}
+button{ cursor: pointer; outline: none;}
+body{
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+input,textarea,button{
+  font-family: 'Montserrat', sans-serif;
+}
+header{
+  height: 60px;
+}
+nav{
+  width: 1280px;
+}
+.logo img{
+  filter: invert();
+}
+.gnb{}
+.gnb a{}
+.sns{}
+.sns i{}
