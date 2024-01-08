@@ -73,6 +73,13 @@ section{
   font-size: 18px;
   box-sizing: border-box;
 }
+/* 원래는 placeholder 가 foucs 가 되면 Search값이 사라진다  */
+.search-box input:focus::placeholder{
+  /* 화면에서 사라지는 방법 3가지 */
+  /* display: none; */
+  /* opacity: 0; */
+  visibility: hidden;
+}
 .search-box button{
   background-color: crimson;
   color: #fff;
