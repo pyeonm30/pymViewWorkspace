@@ -11,10 +11,10 @@
 <body>
   <section>
     <div class="consulting-header">
-      <실무> 웹 퍼블리싱을 위한 <span>실무 실습 위주 학습</span> 신속하게 <span>더조은 IT 아카데미 상담</span>을 신청하실 수 있습니다</h1>
+      <h1> 웹 퍼블리싱을 위한 <span>실무 실습 위주 학습!</span> <br> 신속하게 <span>더조은 IT 아카데미 상담</span>을 신청하실 수 있습니다</h1>
+      <hr>
+      <p> 상담 내용에 따라 비용과 절차에 관련하여 전화 또는 이메일로 신속하게 상담해 드립니다.</p>
     </div>
-    <hr>
-    <p> 상담 내용에 따라 비용과 절차에 관련하여 전화 또는 이메일로 신속하게 상담해 드립니다.</p>
     <div class="consulting-form">
       <form>
         <div class="row">
@@ -48,14 +48,16 @@
             <label>상담내용 <em>*</em> </label>
             <textarea rows="5" required placeholder="상담 접수가 이루어진 후 24시간 내에 연락드리겠습니다. 감사합니다."></textarea>
           </div>
-          <div class="policy">
-            <h4> 개인정보 취급방침 (필수)</h4>
-            <iframe src="policy.html" frameborder="0"></iframe>
-            <div class="agreement">
-              <input type="checkbox"> <label> 개인정보 취급방침을 읽었으며 이에 동의합니다</label>
-            </div>
+        </div>
+
+        <div class="policy">
+          <h4> 개인정보 취급방침 (필수)</h4>
+          <iframe src="policy.html" frameborder="0"></iframe>
+          <div class="agreement">
+            <input type="checkbox" id="chk"> <label for="chk"> 개인정보 취급방침을 읽었으며 이에 동의합니다</label>
           </div>
-          <button class="btn-sumbit"> 상담신청 </button>
+        </div>
+        <button class="btn-sumbit"> 상담신청 </button>
       </form>
     </div>
   </section>
