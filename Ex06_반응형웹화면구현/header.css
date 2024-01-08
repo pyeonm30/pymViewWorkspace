@@ -107,6 +107,8 @@ nav{
     width: 100%;
     /* display: block; */
     position: absolute;
+
+    transition: 0.3s;
   }
   .trigger span:nth-child(1){
     top: 0;
@@ -116,6 +118,20 @@ nav{
   }
   .trigger span:nth-child(3){
     top:100%
+  }
+
+  .trigger.active span:nth-child(1){
+    transform: rotate(45deg);
+    top: 50%;
+  }
+  .trigger.active span:nth-child(2){
+    /* top: 50%; */
+    /* 투명도를 0으로 해준것  */
+    opacity: 0;
+  }
+  .trigger.active span:nth-child(3){
+    transform: rotate(-45deg);
+    top: 50%
   }
 
 }

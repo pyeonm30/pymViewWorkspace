@@ -50,6 +50,8 @@
   // trigger 클릭할때마다 클래스요소(on)를 추가하고 삭제한다 
   $('.trigger').click(
     function () {
+      // toggleClass 안에다가 . 안붙임 주의 
+      $(this).toggleClass('active')
       $('.gnb , .sns').toggleClass('on')
     }
   );
