@@ -46,14 +46,14 @@ button,input,textarea,select{
    z-index 가 높을 수록 먼저 띈다 
   */
   z-index: 10;
-  /* opacity: 0; */
+  opacity: 0;
   visibility: hidden;
   transition: 0.5s;
 
 }
 
 .modal.active{
-  /* opacity: 1; */
+  opacity: 1;
   visibility: visible;
   /* transform 은 한 태그당 한개만 먹힘  */
   transform: translate(-50%, -50%) scale(1);
@@ -62,7 +62,7 @@ button,input,textarea,select{
 
 /* 팝업창의 디자인 담당  */
 .modal-content{
-  margin: auto;
+  /* margin: auto; */
   /* border: 1px solid blue; */
   width: 600px;
   background-color: #fff;
@@ -80,7 +80,8 @@ button,input,textarea,select{
   /* width: 300px; */
   /* height: 500px; */
   background-size: cover;
-  flex: 1;
+  /* 1 0 0 */
+  flex: 1; 
 }
 .desc{
   flex: 2;
@@ -131,8 +132,28 @@ button,input,textarea,select{
   left: 0;
   visibility: hidden;
   transition: 0.5s;
+  opacity: 0;
 }
 .overlay.active{
   visibility: visible;
+  opacity: 1;
 }
 
+@media (max-width: 767px) {
+ 
+  .modal-content{
+    width: 100%;
+    flex-direction: column;
+  }
+  .modal-content > div{
+    width: 350px;
+    /* flex: 1; */
+  }
+  .photo{
+    /* height: 250px; */
+    /* photo flex: 1 를 줬기 때문에 height 안먹는다 
+      flex-basis 를 사용한다 : row ==> width column : hight;
+    */
+    flex-basis: 250px;
+  }
+}
