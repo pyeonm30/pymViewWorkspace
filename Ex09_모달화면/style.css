@@ -21,3 +21,14 @@ button,input,textarea,select{
   /* font-family: 'Noto Sans KR' , sans-serif; */
   font-family: 'Montserrat' , sans-serif;
 }
+
+.btn-open{
+  width: 350px;
+  height: 200px;
+  background-color: crimson;
+  color: white;
+  font-size: 36px;
+  border-radius: 10px;
+  display: block;
+
+}
