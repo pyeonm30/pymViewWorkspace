@@ -39,13 +39,24 @@ button,input,textarea,select{
   /* 보이는 창 화면안에서 위치값을 조정 : 스크롤 상관 없음  */
   position: fixed;
   /* 항상 보이는 창에 정중앙에 위치 %50*/
-  top:20%;
-  left:20%;
-  /* transform: translate(-50%, -50%); */
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%) scale(0.7);
   /* 화면에 레이아웃이 겹칠때 레이아웃 우선순위 줄수있다 : 디폴트 0 
    z-index 가 높을 수록 먼저 띈다 
   */
   z-index: 10;
+  /* opacity: 0; */
+  visibility: hidden;
+  transition: 0.5s;
+
+}
+
+.modal.active{
+  /* opacity: 1; */
+  visibility: visible;
+  /* transform 은 한 태그당 한개만 먹힘  */
+  transform: translate(-50%, -50%) scale(1);
 }
 
 
@@ -118,4 +129,10 @@ button,input,textarea,select{
   position: fixed;
   top: 0;
   left: 0;
+  visibility: hidden;
+  transition: 0.5s;
 }
+.overlay.active{
+  visibility: visible;
+}
+
