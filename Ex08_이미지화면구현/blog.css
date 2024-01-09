@@ -22,7 +22,7 @@ section{
   width: 1000px;
   margin: auto;
   display: flex;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .post{
   display: flex;
@@ -54,6 +54,7 @@ section{
   
 }
 .desc h2{
+  font-weight: bold;
   padding-top: 20px;
 }
 .desc p{
