@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 800px;
+      height: 800px;
+    }
+
+    ul {
+      display: grid;
+      height: 100%;
+
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      /* align-items: stretch;   둘다 stretch 기본값 컬럼 높이만큼 아이템 요소 확장시켜줌*/
+      /* align-items: center; */
+      /* row의 너비 값을 해준게 justfy-items */
+      /* justify-items: ; */
+      justify-items: left;
+    }
+
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: pink;
+      border: 1px solid salmon;
+    }
+
+    .container :nth-child(2n) {
+      background-color: lightblue;
+      border: 1px solid cadetblue;
+    }
+
+    li:nth-child(1) {
+      /* grid-area: a; */
+      justify-self: center;
+
+    }
+
+    li:nth-child(2) {
+      /* grid-area: b; */
+      /* align-self: start; */
+    }
+
+    li:nth-child(3) {
+      /* grid-area: c; */
+    }
+
+    li:nth-child(4) {
+      /* grid-area: d; */
+      /* align-self: end; */
+    }
+
+    li:nth-child(5) {
+      /* grid-area: e; */
+      /* align-self: center; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="gridContainer">
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li class="item">3</li>
+      <li class="item">4</li>
+      <li class="item">5</li>
+    </ul>
+  </div>
+</body>
+
+</html>
