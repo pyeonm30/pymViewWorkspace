@@ -39,6 +39,9 @@ body{
   color: #fff;
   box-sizing: border-box;
 
+  text-align: center;
+  padding-top: 150px;
+
 }
 .card:nth-child(1) .content{
   background: linear-gradient(to top, crimson,transparent);
@@ -50,10 +53,29 @@ body{
   background: linear-gradient(to top, yellowgreen,transparent);
 }
 
-.content h2{}
-.content h2 span{}
+.content h2{
+  font-size: 30px;
+}
+.content h2 span{
+  font-size: 14px;
+  color: gold;
+  font-weight: 500;
+  display: block;
+  margin-top: 10px;
+}
 
 .sns{}
-.sns a{}
+.sns a{
+  color: #fff;
+  border: 1px solid #fff;
+  /* a 태그는 인라인 속성이기 때문에 크기값인 width, height 값을 못준다 */
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  line-height: 20px;
+  /* text-align: center;  content 에서 상속 받아옴 */
+  border-radius: 50%;
+  font-size: 13px;
+}
 
 
