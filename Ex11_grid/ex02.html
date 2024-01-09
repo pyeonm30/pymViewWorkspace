@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      background-color: skyblue;
+    }
+
+    div {
+      /* border: 1px solid black; */
+      border: none;
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .grid {
+      display: grid;
+      height: 100vh;
+      gap: 10px;
+      grid-template:
+        "header header header header" 50px
+        "nav main main main" 1fr
+        "footer footer footer footer" 100px / 1fr 1fr 1fr 1fr
+        /* row size / colum size */
+
+    }
+
+    .header {
+      background-color: #F091FF;
+      grid-area: header;
+    }
+
+    .main {
+      background-color: #BF84E8;
+      grid-area: main;
+    }
+
+    .nav {
+      background-color: #BE9FFF;
+      grid-area: nav;
+    }
+
+    .footer {
+      background-color: #8984E8;
+      grid-area: footer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid">
+    <div class="header item">header</div>
+    <div class="main item">main</div>
+    <div class="nav item">nav</div>
+    <div class="footer item">footer</div>
+  </div>
+</body>
+
+</html>
