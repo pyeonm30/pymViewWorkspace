@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 800px;
+      height: 800px;
+    }
+
+    ul {
+      width: 100%;
+      height: 100%;
+      list-style-type: none;
+      border: 1px solid black;
+      display: grid;
+      /* min max 아이탬의 최소길이와 최대 길이값 줄 수 있음  */
+      /* 최대값은 보통 auto 사용해서 자동으로 부모 박스 크기로 맞춤*/
+      /* 함수가 아니라 키워드 repeat 안에서 보통 사용  */
+      /* auto-fill : (현재 화면에서 자식 요소 합 길이가)가 부모 요소보다 작을때 그 공간을 빈공간으로 남긴다 */
+      /* auto-fit : 부모의 빈공간을 자식이 채운다 */
+      /* grid-template-columns: repeat(2, minmax(100px, auto)); */
+      /* grid-template-columns: repeat(auto-fill, minmax(100px, auto)); */
+      /* 다만 auto-fit 과 max 값이 둘다 있으면 auto 적용 안됨  */
+      grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px 5px;
+    }
+
+    .item {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: pink;
+      border: 1px solid salmon;
+    }
+
+    .container :nth-child(2n) {
+      background-color: lightblue;
+      border: 1px solid cadetblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="gridContainer">
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li class="item">3</li>
+      <li class="item">4</li>
+      <li class="item">5</li>
+    </ul>
+  </div>
+</body>
+
+</html>
