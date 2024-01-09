@@ -146,6 +146,9 @@ button,input,textarea,select{
     flex-direction: column;
   }
   .modal-content > div{
+    /* 보통 모바일 화면은 350을 
+    기준값으로 해줌 
+    */
     width: 350px;
     /* flex: 1; */
   }
@@ -154,6 +157,7 @@ button,input,textarea,select{
     /* photo flex: 1 를 줬기 때문에 height 안먹는다 
       flex-basis 를 사용한다 : row ==> width column : hight;
     */
+    /* 여기서는 높이값 250px 준것 */
     flex-basis: 250px;
   }
 }
