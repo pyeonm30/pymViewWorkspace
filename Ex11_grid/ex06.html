@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 800px;
+      height: 800px;
+    }
+
+    ul {
+      display: grid;
+      height: 100%;
+      border: 1px solid black;
+      grid-template-columns: repeat(3, minmax(100px, auto));
+      grid-auto-rows: repeat(2, 100px);
+
+      /* content 는 부모에 컨테이너가 여유가 있을때만 적용가능한 속성  */
+      /* align-items 각각 자식 요소 의 세로값을 결정해주는 것이고 
+               align-content 는 컨테이너 전체 공간을 봤을때 그 아이템 전부들에 대한 배치 
+            */
+      /* align-items: start; */
+      /* align-content: end; */
+      /* align-content: space-around; */
+      /* justify-content: center; */
+      /* justify-content: space-between; */
+    }
+
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: pink;
+      border: 1px solid salmon;
+    }
+
+    .container :nth-child(2n) {
+      background-color: lightblue;
+      border: 1px solid cadetblue;
+    }
+
+    li:nth-child(1) {
+      grid-column-start: 3;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 3;
+    }
+
+    li:nth-child(2) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      background-color: orange;
+    }
+
+    li:nth-child(3) {
+      /* 시작번호 / 끝번호를 지정하는 방법 외에, 몇 개의 셀을 차지하게 할 것인지를 지정해줄 수도 있어요. */
+      /* 1번 라인에서 2칸 */
+      grid-column: 1 / span 2;
+    }
+
+    li:nth-child(4) {
+      /* 1번 라인에서 3칸 */
+      grid-row: 1 / span 3;
+    }
+
+    li:nth-child(5) {}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="gridContainer">
+      <li class="item">1</li>
+      <li class="item">2</li>
+      <li class="item">3</li>
+      <li class="item">4</li>
+      <li class="item">5</li>
+
+    </ul>
+  </div>
+</body>
+
+</html>

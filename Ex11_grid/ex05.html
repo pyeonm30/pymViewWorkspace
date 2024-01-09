@@ -13,19 +13,25 @@
     .container {
       width: 800px;
       height: 800px;
+      border: 1px solid black;
     }
 
     ul {
       display: grid;
       height: 100%;
+      border: 1px solid black;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(2, 100px);
 
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      /* align-items: stretch;   둘다 stretch 기본값 컬럼 높이만큼 아이템 요소 확장시켜줌*/
-      /* align-items: center; */
-      /* row의 너비 값을 해준게 justfy-items */
-
-      /* justify-items: left; */
+      /* content 는 부모에 컨테이너가 여유가 있을때만 적용가능한 속성  */
+      /* align-items 각각 자식 요소 의 세로값을 결정해주는 것이고 
+               align-content 는 컨테이너 전체 공간을 봤을때 그 아이템 전부들에 대한 배치 
+            */
+      /* align-items: start; */
+      /* align-content: end; */
+      align-content: space-around;
+      /* justify-content: center; */
+      justify-content: space-between;
     }
 
     .item {
@@ -39,31 +45,6 @@
     .container :nth-child(2n) {
       background-color: lightblue;
       border: 1px solid cadetblue;
-    }
-
-    li:nth-child(1) {
-      /* grid-area: a; */
-      justify-self: center;
-
-    }
-
-    li:nth-child(2) {
-      /* grid-area: b; */
-      align-self: start;
-    }
-
-    li:nth-child(3) {
-      /* grid-area: c; */
-    }
-
-    li:nth-child(4) {
-      /* grid-area: d; */
-      /* align-self: end; */
-    }
-
-    li:nth-child(5) {
-      /* grid-area: e; */
-      /* align-self: center; */
     }
   </style>
 </head>
