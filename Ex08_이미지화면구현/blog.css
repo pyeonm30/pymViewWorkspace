@@ -17,7 +17,45 @@ body{
   font-family: 'Montserrat' , sans-serif;
   /* font-family: 'Noto Sans KR' , sans-serif; */
 }
-button,input,textarea,select{
-  /* font-family: 'Noto Sans KR' , sans-serif; */
-  font-family: 'Montserrat' , sans-serif;
+
+section{
+  width: 1000px;
+  margin: auto;
+  display: flex;
+  border: 1px solid black;
+}
+.post{
+  display: flex;
+}
+.post:nth-child(odd){
+  flex-direction: column;
+}
+.post:nth-child(even){
+  flex-direction: column-reverse;
+}
+.image{
+  width: 250px;
+}
+/* img 인라인 블럭 -> 자체적으로 마진 이 있다 */
+.image img{
+  width: 100%;
+  display: block;
+  /* margin-bottom: 10px; */
+}
+.desc{
+  background-color: lightseagreen;
+  color: #fff;
+  height: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.desc h2{
+  padding-top: 20px;
+}
+.desc p{
+  padding: 20px;
 }
