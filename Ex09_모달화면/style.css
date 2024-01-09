@@ -23,8 +23,8 @@ button,input,textarea,select{
 }
 
 .btn-open{
-  width: 350px;
-  height: 200px;
+  width: 400px;
+  height: 100px;
   background-color: crimson;
   color: white;
   font-size: 36px;
