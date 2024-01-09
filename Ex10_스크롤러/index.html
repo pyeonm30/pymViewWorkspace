@@ -13,6 +13,81 @@
       margin: 0;
       height: 100vh;
     }
+
+    .container {
+      height: 100%;
+    }
+
+    header {
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .lnb-inner,
+    .gnb-inner {
+      transition: 0.5s;
+    }
+
+    header.active .lnb-inner {
+      /* display: none; */
+      height: 0;
+    }
+
+    header.active .gnb-inner {
+      background-color: #fff;
+      color: #000;
+      box-shadow: 0 3px 3px #000000a1;
+    }
+
+    .lnb-inner {
+      background-color: crimson;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    .gnb-inner {
+      background-color: black;
+      height: 80px;
+      line-height: 80px;
+    }
+
+
+
+    /* section {} */
+
+    section p {
+      color: #ddd;
+      font-size: 3em;
+      line-height: 1em;
+    }
+
+    .btn-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      font-size: 30px;
+      background-color: crimson;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      border-radius: 50%;
+      transform: translateY(100px);
+      opacity: 0;
+
+      transition: 0.5s;
+    }
+
+    .btn-top.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 
 </head>
@@ -41,8 +116,22 @@
     </section>
   </div>
 
-  <a href="#" class="btn-top"> <i class="fa fa-arrow-up"></i></a>
+  <a href="#" class="btn-top active"> <i class="fa fa-arrow-up"></i></a>
 
 </body>
 
 </html>
+<script>
+  // 스크롤을 내리면(윈도우== 브라우저) 어떤 반응을 하고싶다 => 윈도우 객체를 가지고 와야한다
+  $(window).scroll(
+    function () {
+      // 화면의 위쪽을 기준으로 값을 가져오는 애 50보다 크다 => 스크롤을 조금이라도 내렸다
+      if ($(this).scrollTop() > 50) {
+        $('header , .btn-top').addClass('active');
+      } else {
+        // 가장 위인 상태
+        $('header , .btn-top').removeClass('active');
+      }
+    }
+  );
+</script>
