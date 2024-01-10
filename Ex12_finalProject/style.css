@@ -225,6 +225,34 @@ nav{
   margin-left: 15px;
 }
 /* testimonial */
+.testimonial{
+  padding: 100px 0;
+}
+.testimonial-content{
+  text-align: center;
+}
+.testimonial-content h2{
+  font-size: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.testimonial-content h2 b{}
+.testimonial-content hr{
+  /* 블럭요소 */
+  border: none;
+  background-color: royalblue;
+  height: 4px;
+  width: 120px;
+  margin: 30px auto;
+}
+.myslider{
+  border: 1px solid red;
+}
+.myslider div{
+  border: 1px solid green;
+  height: 300px;
+}
+
 /* callaction */
 .callaction{
   height: 450px;
