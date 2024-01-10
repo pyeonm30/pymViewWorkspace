@@ -19,9 +19,46 @@ body{
   /* font-family: 'Noto Sans KR' , sans-serif; */
   line-height: 1.5em;
 }
+.container{
+  height: 100%;
+}
 /* common CSS */
 .inner{
   border: 1px solid blue;
   width: 1300px;
 }
+/* header */
+header{
+  border: 1px solid black;
+}
+.banner{
+  width: 1300px;
+  border: 1px solid blue;
+  background-color: black;
+}
+.lnb{}
+.lnb a{
+  color: #ddd;
+}
+.lan a em{}
 
+nav{
+  width: 1300px;
+  border: 1px solid red;
+  background-color: lightgrey;
+}
+.logo{}
+.logo img{}
+.gnb{}
+.gnb ul{}
+.gnb ul li{}
+.gnb ul li a{}
+
+/* intro */
+
+/* about */
+/* ranking */
+/* testimonial */
+/* callaction */
+/* festival */
+/* footer */
