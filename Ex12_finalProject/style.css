@@ -171,15 +171,50 @@ nav{
 }
 .item{
   border: 1px solid red;
-  width: 300px;
-  height: 600px;
+  width: 390px;
+  height: 620px;
+  border-radius: 30px 0 30px 0;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px #00000067;
 }
-.up-image{}
-.up-image img{}
-.down-desc{}
-.down-desc h3{}
-.badge{}
-.btn-explore{}
+.up-image{
+  width: 100%;
+  height: 300px;
+}
+.up-image img{
+  /* width: 100%; */
+  /* 이미지 자체에는 사이즈를 픽스를 안시킴 
+    부모에 따라 유동적으로 바꿀 수 있게해준다 
+  */
+  /* 100% 사용하려면 자기자신의 부모의 height 값이 있어야한다  */
+  height: 100%;
+}
+.down-desc{
+  padding: 25px;
+}
+.down-desc h3{
+  font-size: 22px;
+  margin-top: 5px;
+}
+.down-desc p{
+  font-size: 16px;
+}
+.badge{
+  background-color: pink;
+  color: #fff;
+  padding: 2px 10px;
+  font-size: 16px;
+}
+.badge.good{
+  background-color: royalblue;
+}
+.badge.must{
+  background-color: crimson;
+}
+.btn-explore{
+  color: #c25a3a;
+  font-weight: 500;
+}
 
 /* testimonial */
 /* callaction */
