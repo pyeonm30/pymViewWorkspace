@@ -1,0 +1,166 @@
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    text-align: center;
+    z-index: 1000;
+  }
+  h1, h2{
+    line-height: 1.3em;
+  }
+  .banner {
+    display: none;
+  }
+  
+  .lnb {
+    width: 100%;
+    text-align: center;
+  }
+  nav {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+
+  .gnb {
+    flex-direction: column;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 80px;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.17);
+    transition: 0.3s;
+  }
+  .gnb.active {
+    right: 0;
+  }
+  .gnb li a {
+    /*border: 1px solid #000;*/
+    color: #000;
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    padding: 10px;
+  }
+  
+  /* Trigger */
+  .trigger {
+    display: block;
+    /*border: 1px solid red;*/
+    width: 30px;
+    height: 16px;
+    position: absolute;
+    right: 20px;
+    top: 35px;
+  }
+  .trigger span {
+    position: absolute;
+    height: 1px;
+    background-color: #000;
+    width: 100%;
+    transition: 0.3s;
+    right: 10px;
+  }
+  .trigger span:nth-child(1) {
+    top: 0;
+  }
+  .trigger span:nth-child(2) {
+    top: 50%;
+  }
+  .trigger span:nth-child(3) {
+    top: 100%;
+  }
+
+  .trigger.active span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+  .trigger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .trigger.active span:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+  
+  /* Common CSS */
+  .inner {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  
+  /* Intro */
+  .heading h1 {
+    font-size: 40px;
+  }
+  .heading p {
+    padding: 0;
+  }
+  
+  /* About Section */
+  .about-content {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+  .about-content div {
+    padding: 10px;
+  }
+  
+  /* Ranking Section */
+  .ranking-content {
+    padding: 50px 0;
+  }
+
+  .items {
+    flex-direction: column;
+  }
+  .item {
+    width: 100%;
+    border-radius: 7px;
+    margin-bottom: 25px;
+  }
+  
+  /* Testimonial Section */
+  .testimonial {
+    padding: 50px 0;
+  }
+  .testimonial-content h2 {
+    font-size: 24px;
+  }
+  
+  /* CallAction Section */
+  .callaction-heading h2 {
+    font-size: 36px;
+  }
+  
+  /* Festival Section */
+  .festival {
+    padding: 15px;
+  }
+  .btns a {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+  }
+  .footer-content ul {
+    margin-bottom: 25px;
+  }
+}
+
+
+
+
+

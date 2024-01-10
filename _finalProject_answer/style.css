@@ -1,0 +1,460 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{ margin: 0; font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+ul{margin: 0; padding: 0; list-style: none;}
+button,input,textarea,select{
+  font-family: 'Montserrat' , sans-serif;
+  outline: none;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat' , sans-serif;
+  /* font-family: 'Noto Sans KR' , sans-serif; */
+  line-height: 1.5em;
+}
+.container{
+  height: 100%;
+}
+/* common CSS */
+.inner{
+  /* border: 1px solid blue; */
+  width: 1300px;
+  margin: auto;
+}
+/* header */
+header{
+  /* border: 1px solid black; */
+  position: fixed;
+  /* position: absolute; */
+  width: 100%;
+  top: 0;
+  left:0;
+  padding-top:10px;
+  z-index: 1000;
+}
+.banner{
+  /* border: 1px solid blue; */
+  background-color: black;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.lnb{
+  width: 1300px;
+  /* border: 1px solid plum; */
+  /* border: 1px solid plum; */
+  margin: auto;
+  text-align: right;
+}
+.lnb a{
+  color: #ddd;
+  margin: 5px;
+}
+.lnb a:last-child{
+  margin: 0;
+}
+.lnb a em{
+  color: #bbbbbbd0;
+}
+
+nav{
+  width: 1300px;
+  /* border: 1px solid red; */
+  /* background-color: lightgrey; */
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo{
+  padding-top: 10px;
+}
+
+.gnb{
+  display: flex;
+}
+/* .gnb li{} */
+.gnb li a{
+  margin: 20px;
+  color: white;
+}
+.gnb li a:last-child{
+  /* margin: 0; */
+  margin-right: 0;
+}
+.gnb li a:hover{
+  color: #222;
+}
+
+.trigger {
+  display: none;
+}
+/* Header with active class */
+header.active {
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+header.active .gnb li a {
+  color: #000;
+}
+header.active .banner {
+  height: 0;
+  overflow: hidden;
+}
+header.active nav {
+  padding-bottom: 20px;
+}
+
+.gototop {
+  background: linear-gradient(45deg, skyblue, #c1e4f2);
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  right: 20px;
+  bottom: -20px;
+  opacity: 0;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  line-height: 50px;
+  transition: 0.5s;
+}
+.gototop.active {
+  bottom: 20px;
+  opacity: 1;
+}
+
+/* intro */
+.intro{
+  /* border: 1px solid red; */
+  height: 70vh;
+  background: url(images/intro.jpg) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading{
+  color: #fff;
+  text-align: center;
+}
+.heading h1{
+  font-size: 56px;
+  margin-bottom: 30px;
+}
+.heading p{
+  font-size: 22px;
+  line-height: 1.5em;
+  padding: 0 150px;
+
+}
+/* about */
+.about-content{
+  display: flex;
+  padding: 150px 0;
+
+}
+.about-content > div{
+  padding: 30px;
+}
+.desc{
+  text-align: center;
+  flex: 3;
+}
+.desc h2{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.desc p{
+  font-size: 16px;
+  line-height: 1.7em;
+}
+.desc a{
+  color:#c25a3a;
+  font-weight: bold;
+}
+.desc a:hover{
+  text-decoration: underline;
+}
+.photo{
+  flex: 2;
+  /* width: 300px; */
+}
+.photo img{
+  width: 100%;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+}
+
+/* ranking */
+.ranking{
+  /* 연한 배경색 #f1~ f9 */
+  background-color: #f9f9f9f9;
+}
+.ranking-content{
+  /* border: 1px solid blue; */
+  padding: 100px 0;
+  margin: 0 20px;
+
+}
+.ranking-content h2{
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 50px;
+
+}
+.items{
+  display: flex;
+  justify-content: space-around;
+}
+.item{
+  /* border: 1px solid red; */
+  width: 390px;
+  height: 620px;
+  border-radius: 30px 0 30px 0;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px #00000067;
+}
+.up-image{
+  width: 100%;
+  height: 300px;
+}
+.up-image img{
+  /* width: 100%; */
+  /* 이미지 자체에는 사이즈를 픽스를 안시킴 
+    부모에 따라 유동적으로 바꿀 수 있게해준다 
+  */
+  /* 100% 사용하려면 자기자신의 부모의 height 값이 있어야한다  */
+  height: 100%;
+}
+.down-desc{
+  padding: 25px;
+}
+.down-desc h3{
+  font-size: 22px;
+  margin-top: 5px;
+}
+.down-desc p{
+  font-size: 16px;
+}
+.badge{
+  background-color: pink;
+  color: #fff;
+  padding: 2px 10px;
+  font-size: 16px;
+}
+.badge.good{
+  background-color: royalblue;
+}
+.badge.must{
+  background-color: crimson;
+}
+.btn-explore{
+  color: #c25a3a;
+  font-weight: 500;
+}
+.btn-explore img{
+  transition: 0.3s;
+}
+.btn-explore:hover img{
+  /* transform: translateX(15px); */
+  margin-left: 15px;
+}
+/* testimonial */
+.testimonial{
+  padding: 100px 0;
+}
+.testimonial-content{
+  text-align: center;
+}
+.testimonial-content h2{
+  font-size: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+/* .testimonial-content h2 b{} */
+.testimonial-content hr{
+  /* 블럭요소 */
+  border: none;
+  background-color: royalblue;
+  height: 4px;
+  width: 120px;
+  margin: 30px auto;
+}
+/* .myslider{
+  border: 1px solid red;
+} */
+.myslider div{
+  /* border: 1px solid green; */
+  height: 300px;
+}
+
+.client{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.client img{
+  width: 85px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.client span{
+  font-size: 18px;
+  line-height: 1.7em;
+}
+.client span b{
+  display: block;
+}
+.comment{
+    /* display: block; */
+    /* text-align: left; */
+  font-size: 16px;
+  line-height: 1.6em;
+  padding: 10px;
+}
+
+
+/* callaction */
+.callaction{
+  height: 450px;
+  /* border: 1px solid red; */
+  background: url(images/callaction-01.jpg) no-repeat center center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 가상 선택자의 부모  */
+  position: relative;
+}
+/* 가상 선택자를 사용할때 1. content:'', before 인라인요소 포지션을 주면 인라인 블록으로 바뀜  */
+.callaction::before{
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 100%;
+  /* background-color: palegreen; */
+  background: linear-gradient(to right bottom, rgba(78, 0, 78, 0.4), rgba(104, 104, 1, 0.4))
+}
+/* position => 레이아웃을 겹치는것 : absolute 보다 relative가 우선순위 : 조건은
+z-index 없을때 
+*/
+.callaction-heading{
+  text-align: center;
+  /* position: relative; */
+  z-index: 100;
+}
+.callaction-heading h2{
+  color: #fff;
+  font-size: 48px;
+  line-height: 1.3em;
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+}
+.callaction-heading span{
+  font-weight: 500;
+}
+/* a 인라인 요소  */
+.callaction-heading a{
+  background-color:  #109e4b;
+  /* display: inline-block; */
+  /* margin-bottom: 1000px; */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+
+  
+}
+/* festival */
+.festival{
+  height: 270px;
+  background-color: #333;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.festival-heading{
+  text-align: center;
+}
+.festival-heading h3{
+  color: #fff;
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.festival-heading h3 span{
+  font-weight: 500;
+}
+/* .btns{
+  border: 1px solid red;
+} */
+.btns a{
+  display: inline-block;
+  width: 200px;
+  /* height: 50px; */
+  padding: 6px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.btns a:nth-child(1){
+  background-color: orange;
+  color: #fff;
+}
+.btns a:nth-child(2){
+  color: #222;
+  background: #ededed;
+}
+/* footer */
+footer{
+  background-color: #000;
+  padding: 30px;
+}
+.footer-content{
+  display: flex;
+}
+
+.footer-content ul{
+  text-align: center;
+  color: #959595;
+}
+.footer-content ul li:first-child{
+  color: #d9d9d9;
+  font-weight: 500;
+}
+/* .footer-content ul li{} */
+.footer-content ul li a{
+  color: #959595;
+}
+.footer-content ul li a:hover{
+  text-decoration: underline;
+}
+.community{
+  flex: 1;
+}
+.network{
+  flex: 1;
+}
+.help{
+  flex: 2;
+}
+
+/* Slick.js */
+button.slick-arrow {
+  /* border: 1px solid #000; */
+  display: none !important;
+}
