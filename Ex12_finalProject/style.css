@@ -24,7 +24,7 @@ body{
 }
 /* common CSS */
 .inner{
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 1300px;
   margin: auto;
 }
@@ -246,12 +246,36 @@ nav{
   margin: 30px auto;
 }
 .myslider{
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .myslider div{
-  border: 1px solid green;
+  /* border: 1px solid green; */
   height: 300px;
 }
+
+.client{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.client img{
+  width: 85px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.client span{
+  font-size: 18px;
+  line-height: 1.7em;
+}
+.client span b{
+  display: block;
+}
+.comment{
+  font-size: 16px;
+  line-height: 1.6em;
+  padding: 10px;
+}
+
 
 /* callaction */
 .callaction{
@@ -310,7 +334,7 @@ z-index 없을때
 .festival{
   height: 270px;
   background-color: #333;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   justify-content: center;
