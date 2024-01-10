@@ -248,11 +248,35 @@ z-index 없을때
   background: #ededed;
 }
 /* footer */
-footer{}
-.footer-content{}
-.footer-content ul{}
-.footer-content ul li{}
-.footer-content ul li a{}
-.community{}
-.network{}
-.help{}
+footer{
+  background-color: #000;
+  padding: 30px;
+}
+.footer-content{
+  display: flex;
+}
+
+.footer-content ul{
+  text-align: center;
+  color: #959595;
+}
+.footer-content ul li:first-child{
+  color: #d9d9d9;
+  font-weight: 500;
+}
+/* .footer-content ul li{} */
+.footer-content ul li a{
+  color: #959595;
+}
+.footer-content ul li a:hover{
+  text-decoration: underline;
+}
+.community{
+  flex: 1;
+}
+.network{
+  flex: 1;
+}
+.help{
+  flex: 2;
+}
