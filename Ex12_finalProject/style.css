@@ -26,41 +26,130 @@ body{
 .inner{
   border: 1px solid blue;
   width: 1300px;
+  margin: auto;
 }
 /* header */
 header{
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  /* position: fixed; */
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left:0;
 }
 .banner{
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   background-color: black;
   height: 40px;
+  display: flex;
+  align-items: center;
 }
 .lnb{
   width: 1300px;
-  border: 1px solid plum;
+  /* border: 1px solid plum; */
+  /* border: 1px solid plum; */
   margin: auto;
+  text-align: right;
 }
 .lnb a{
   color: #ddd;
+  margin: 5px;
 }
-.lan a em{}
+.lnb a:last-child{
+  margin: 0;
+}
+.lnb a em{
+  color: #bbbbbbd0;
+}
 
 nav{
   width: 1300px;
-  border: 1px solid red;
-  background-color: lightgrey;
+  /* border: 1px solid red; */
+  /* background-color: lightgrey; */
   margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.logo{}
-.logo img{}
-.gnb{}
-.gnb li{}
-.gnb li a{}
+/* .logo{} */
+/* .logo img{} */
+.gnb{
+  display: flex;
+}
+/* .gnb li{} */
+.gnb li a{
+  margin: 20px;
+  color: white;
+}
+.gnb li a:last-child{
+  /* margin: 0; */
+  margin-right: 0;
+}
+.gnb li a:hover{
+  color: #222;
+}
 
 /* intro */
+.intro{
+  /* border: 1px solid red; */
+  height: 70vh;
+  background: url(images/intro.jpg) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading{
+  color: #fff;
+  text-align: center;
+}
+.heading h1{
+  font-size: 56px;
+  margin-bottom: 30px;
+}
+.heading p{
+  font-size: 22px;
+  line-height: 1.5em;
+  padding: 0 150px;
 
+}
 /* about */
+.about-content{
+  display: flex;
+  padding: 150px 0;
+
+}
+.about-content > div{
+  padding: 30px;
+}
+.desc{
+  text-align: center;
+  flex: 3;
+}
+.desc h2{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.desc p{
+  font-size: 16px;
+  line-height: 1.7em;
+}
+.desc a{
+  color:#c25a3a;
+  font-weight: bold;
+}
+.desc a:hover{
+  text-decoration: underline;
+}
+.photo{
+  flex: 2;
+  /* width: 300px; */
+}
+.photo img{
+  width: 100%;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+}
+
 /* ranking */
 /* testimonial */
 /* callaction */
