@@ -38,6 +38,7 @@ header{
 .lnb{
   width: 1300px;
   border: 1px solid plum;
+  margin: auto;
 }
 .lnb a{
   color: #ddd;
@@ -48,6 +49,7 @@ nav{
   width: 1300px;
   border: 1px solid red;
   background-color: lightgrey;
+  margin: auto;
 }
 .logo{}
 .logo img{}
