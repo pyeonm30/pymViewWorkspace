@@ -32,11 +32,13 @@ header{
   border: 1px solid black;
 }
 .banner{
-  width: 1300px;
   border: 1px solid blue;
   background-color: black;
 }
-.lnb{}
+.lnb{
+  width: 1300px;
+  border: 1px solid plum;
+}
 .lnb a{
   color: #ddd;
 }
