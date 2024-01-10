@@ -12,6 +12,9 @@ button,input,textarea,select{
   font-family: 'Montserrat' , sans-serif;
   outline: none;
 }
+html{
+  scroll-behavior: smooth;
+}
 body{
   margin: 0;
   height: 100vh;
