@@ -206,4 +206,45 @@ z-index 없을때
   
 }
 /* festival */
+.festival{
+  height: 270px;
+  background-color: #333;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.festival-heading{
+  text-align: center;
+}
+.festival-heading h3{
+  color: #fff;
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.festival-heading h3 span{
+  font-weight: 500;
+}
+.btns{
+  /* border: 1px solid red; */
+
+}
+.btns a{
+  display: inline-block;
+  width: 200px;
+  /* height: 50px; */
+  padding: 6px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.btns a:nth-child(1){
+  background-color: orange;
+  color: #fff;
+}
+.btns a:nth-child(2){
+  color: #222;
+  background: #ededed;
+}
 /* footer */
