@@ -40,9 +40,15 @@ console.log('--------------');
 result = array.findIndex(value => value > 10);
 console.log(result)
 
-// -- reduce () : 총합 
 
-result = array.reduce((p, n) => p + n, 0); // 두번째 인자값 안주면 디폴트 0 
+console.log('--------------');
+// -- reduce () : 총합 , 갯수 
+
+result = array.reduce((p, n) => {
+
+  console.log(`누적값 ${p} : 현재값 ${n}`);
+  return p + n
+}, 0); // 두번째 인자값 안주면 디폴트 0 
 console.log(result)
 
 // reduce 인자값을 2개를 받는다 (콜백함수(p , n) , 시작값 )
@@ -50,3 +56,14 @@ console.log(result)
 // p = 0 ,  n = 3, retturn 3+0 => p = 3
 // p= 3 , n = 5 return 3+5 = > p = 8 ;
 // p = 8 , n = 8 return 8+8 => p = 16 .....  => 91 
+
+// 짝수의 갯수를 리턴 ( 누적값, 배열요소값 )
+result = array.reduce((cnt, val) => {
+  if (val % 2 != 0) {
+    return cnt;
+  } else {
+    return cnt += 1;
+  }
+}, 0)
+
+console.log(result);
