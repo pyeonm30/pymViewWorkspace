@@ -25,3 +25,28 @@ array.forEach(n => {
 let result = array.map(x => x * 100);
 console.log(result);
 console.log(array);
+
+// filter : 조건식에서 true 되는 값만 반환 
+
+result = array.filter(value => value % 2 == 0);
+
+console.log(result)
+
+console.log('--------------');
+// gk
+result = array.find(value => value > 10);
+console.log(result)
+console.log('--------------');
+result = array.findIndex(value => value > 10);
+console.log(result)
+
+// -- reduce () : 총합 
+
+result = array.reduce((p, n) => p + n, 0); // 두번째 인자값 안주면 디폴트 0 
+console.log(result)
+
+// reduce 인자값을 2개를 받는다 (콜백함수(p , n) , 시작값 )
+
+// p = 0 ,  n = 3, retturn 3+0 => p = 3
+// p= 3 , n = 5 return 3+5 = > p = 8 ;
+// p = 8 , n = 8 return 8+8 => p = 16 .....  => 91 
