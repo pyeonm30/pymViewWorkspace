@@ -16,3 +16,11 @@ let hamster = {
 };
 
 let pets = [cat, dog, rabbit, hamster, cat];
+
+pets.forEach(obj => console.log(obj));
+
+// 1. 동물의 kind 가 개 인것을 찾아라 
+
+// 2. 동물의 kind 가 고양이 인것만 빼서 배열로 만들어라 
+
+// 3. 총 동물의 평균 나이를 구해라 
