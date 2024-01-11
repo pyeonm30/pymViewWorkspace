@@ -95,3 +95,17 @@ switch (englishDay) {
 }
 
 console.log(koreanDay);
+
+// 단축 평가 : || 모든 비교연산자 중에 하나로도 참이면 참 => 한개가 참이면 나머지 비교 x 건너뛴다 
+//          : && 모든 비교연산자 중에 하나로도 거짓 이면 거짓 => 한개가 거짓이면 나머지 비교 x 건너뛴다 
+
+// 멈춘 시점에 있는 값만 출력함 
+
+console.log(true || '박연미');
+console.log(false || '박연미');
+
+console.log(true && '박연미');
+console.log(false && '박연미');
+
+console.log(true && false && '박연미');
+console.log(true || false || '박연미');
