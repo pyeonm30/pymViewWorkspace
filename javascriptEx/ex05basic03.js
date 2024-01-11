@@ -51,6 +51,47 @@ console.log(typeof (test + ""));
 
 console.log(typeof test);
 
-// test = String.toString(1000);
-// console.log(typeof test);
-// console.log(test);
+test = (1000).toString();
+console.log(typeof test);
+console.log(test + 1000);
+let test2 = (true).toString();
+console.log('10' !== 10); // === !==
+console.log(true == test2);
+
+// 숫자를 문자로 바꾸는것  
+let num1 = num + ''; // 묵시적(암묵적) 형변환 
+num1 = num1.toString(); // 명시적 형변환 
+
+// 문자를 숫자로 바꿔주는것 
+
+let num2 = '10';
+num2 = +num2; // 문자 앞에다가 부호 붙이는거 
+num2 = num2 * 1;
+num2 = parseInt('100');
+
+const englishDay = 'saturday';
+
+let koreanDay;
+
+switch (englishDay) {
+  case 'monday':
+    koreanDay = '월요일';
+    break;
+  case 'tuesday':
+    koreanDay = '화요일';
+    break;
+  case 'wednesday':
+    koreanDay = '수요일';
+    break;
+  case 'thursday':
+    koreanDay = '목요일';
+    break;
+  case 'friday':
+    koreanDay = '금요일';
+    break;
+  default:
+    koreanDay = '주말';
+    break;
+}
+
+console.log(koreanDay);
