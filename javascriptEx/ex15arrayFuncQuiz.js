@@ -12,9 +12,12 @@ let rabbit = {
 };
 let hamster = {
   kind: '햄스터',
-  age: 1
-
+  age: 1,
+  eat: function () {
+    console.log('해바라기씨를 먹는다 ')
+  }
 };
+
 
 let pets = [cat, dog, rabbit, hamster, cat];
 
