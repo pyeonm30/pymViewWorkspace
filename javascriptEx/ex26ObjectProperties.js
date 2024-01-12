@@ -20,11 +20,11 @@ console.log(dog);
 delete dog.name;
 console.log(dog);
 
-//seal : 밀봉 :봉인하다 : 프로퍼티 추가 삭제 금지 
+//seal : 밀봉 :봉인하다 : 프로퍼티 추가 삭제 금지 , 값 변경 가능 
 const cat = {
   name: '복다주',
   year: 2013,
-
+  toy: null,
   get age() {
     return new Date().getFullYear - this.year;
   },
@@ -63,6 +63,11 @@ const hamster = {
 }
 console.log(Object.isFrozen(hamster));
 Object.freeze(hamster); // 속성값이 원시값이 아니라 참조값이면 그 참조값의 값은 변경이 가능하다 
+Object.freeze(hamster.toy); // 참조변수는 따로 다시 freeze 해야한다 
+
+const test = [...hamster];
+Object.isFrozen(test);
+console.log(test);
 
 hamster.year = 2024;
 console.log(hamster);
