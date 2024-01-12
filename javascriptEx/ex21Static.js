@@ -2,6 +2,8 @@
 // Student 클래스 만들어서 속성 id , name 만들어 주세요 printInfo id와 name 출력되게 
 // static => 클래스 메서드, 클래스 변수 => 클래스 이름으로 접근한다 : 객체 생성없이 
 
+
+// function Student(id, name){ static count =0;}
 class Student {
   static count = 0; // 딱 한번만 만들어진다 : 객체들끼리 공유 
   constructor(id, name) {
