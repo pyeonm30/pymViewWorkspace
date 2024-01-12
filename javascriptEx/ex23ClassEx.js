@@ -51,3 +51,6 @@ console.log(counter.value);
 
 counter.value = -100;
 console.log(counter.value);
+
+
+console.log(Object.getOwnPropertyDescriptors(counter));

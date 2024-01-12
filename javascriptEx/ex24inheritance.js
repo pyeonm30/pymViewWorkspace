@@ -1,7 +1,9 @@
 class Person {
-  constructor(name, age) {
+  #job;
+  constructor(name, age, job) {
     this.name = name;
     this.age = age;
+    this.#job = job;
   }
   eat() {
     console.log('먹자!');
@@ -46,3 +48,12 @@ console.log(lee);
 kim.eat();
 park.teach();
 lee.eat();
+
+
+//console.dir(globalThis);
+
+// function test() {
+//   console.log(globalThis === this);
+//   console.log(this);
+// }
+// test();
