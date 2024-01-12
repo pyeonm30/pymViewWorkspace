@@ -1,14 +1,14 @@
-var num1 = 10;
-var num2 = 20;
+let num1 = 10;
+let num2 = 20;
 
 function add(x, y) {
-  var result = x + y;
+  let result = x + y;
   return result;
 }
-var mutlply = function(x, y) {
-  var result = x * y;
+let mutlply = function(x, y) {
+  let result = x * y;
   return result;
 }
 
-var res1 = add(num1, num2);
-var res2 = mutlply(num1, num2);
+let res1 = add(num1, num2);
+let res2 = mutlply(num1, num2);
