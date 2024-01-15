@@ -32,7 +32,8 @@
 </html>
 
 <script>
-  const checkbox = document.querySelector('input');
+  const checkbox = document.querySelector('input[type="checkbox"]');
+  console.log(checkbox);
   checkbox.addEventListener('click', event => {
     console.log(event.currentTarget);
     console.log("클릭했다 ");

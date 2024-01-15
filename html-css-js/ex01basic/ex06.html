@@ -44,7 +44,7 @@
 <script>
   const div = document.querySelectorAll("div");
   div.forEach(d => d.addEventListener("click", (e) => {
-    // console.log(e.target);
-    console.log(e.currentTarget);
+    //console.log(e.target); // 이벤트가 발생하는 대상 
+    console.log(e.currentTarget); //이벤트를 처리하는 대상 
   }))
 </script>
