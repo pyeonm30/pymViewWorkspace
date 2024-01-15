@@ -32,5 +32,16 @@
   ];
 
   // 'keyup' 이벤트 사용함  // 사용자가 입력한 인풋 => value // event.target.value
+  const searchInput = document.querySelector('#search-id-input');
+  const searchResult = document.querySelector('#search-result');
+
+  searchInput.addEventListener('keyup', () => {
+    // console.log(event.target.value);  addEventListener 콜백함수 불를때 event 내장되어있음
+    // console.log(event.target.value)
+    const targetData = userDataList.find((data) => data.id == event.target.value);
+    // console.log(targetData);
+    searchResult.textContent = targetData ? targetData.name : '유저 검색 결과없음';
+  })
+
 
 </script>
