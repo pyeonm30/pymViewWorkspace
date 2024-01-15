@@ -7,72 +7,79 @@
   <title>Document</title>
   <style>
     .box {
-      width: 50px;
-      height: 50px;
-      background-color: pink;
+      width: 150px;
+      height: 150px;
+      background-color: yellow;
       margin: 10px;
       /* transform: translateX(200px); */
       /* transition: 2s; */
+    }
+
+    .msg {
+      border: 1px solid blue;
+      width: 300px;
+      height: 100px;
+      font-size: 1.5em;
+      color: blue;
+      text-align: center;
+      line-height: 100px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 
 <body>
   <div class="box"></div>
-  <button class="btn"> 네모 움직여 </button>
+  <div class="msg"> 네모 이벤트 처리값 </div>
+
+  <button class="btn1"> 네모 키우기 </button>
+  <button class="btn2"> 네모 회전하기 </button>
 </body>
 
 </html>
 
 <script>
   const box = document.querySelector('.box');
-  const btn = document.querySelector('.btn');
-
-  // function clicked() {
-  //   const box = document.querySelector('.box');
-  //   box.style.transform = "translateX(200px)"; // transform : ta
-  //   box.style.transition = '2s';
-  //   btn.textContent = "네모 돌아와";
-  //   // btn.innerHTML = '네모 돌아와';
-
-  //   // innterHTML vs textContent 
-  //   // innterHTML -> 전체적인 html DOM tree 다시 생성 
-  //   // textContent -> 부분적으로 해당 요소만 리렌더링 리페인팅 됨 
-  //   // text 변동이 많으면 textContent를 사용하는 것이 더 낫다 
-  // }
-  // function clicked() {
-  //   const box = document.querySelector('.box');
-  //   box.style.transform = "translateX(0px)"; // transform : ta
-  //   box.style.transition = '2s';
-  //   btn.textContent = "네모 움직여";
-  // }
+  const msg = document.querySelector('.msg');
+  const btns = document.querySelectorAll('button');
+  const btn1 = btns[0];
+  const btn2 = btns[1];
 
   let isChecked = true;
 
-  btn.addEventListener("click", () => {
-    isChecked ? moveBox() : combackBox();
-  })
-  // btn.addEventListener("click", () => {
-  //   console.log("클릭2");
-  //   const box = document.querySelector('.box');
-  //   box.style.transform = "translateX(0px)"
-  //   btn.textContent = "네모 움직여";
-  // })
-  // btn.addEventListener("mouseout", () => {
-
-  // })
-  function moveBox() {
-    const box = document.querySelector('.box');
+  box.addEventListener("mouseover", () => {
     box.style.transform = "translateX(200px)"
     box.style.transition = '2s';
     btn.textContent = "네모 돌아와";
-    isChecked = !isChecked;
-  }
-  function combackBox() {
-    const box = document.querySelector('.box');
+    msg.textContent = '네모가 이동했다'
+  })
+  box.addEventListener("mouseout", () => {
     box.style.transform = "translateX(0px)"
     btn.textContent = "네모 움직여";
+    msg.textContent = '네모가 돌아왔다';
+  })
+
+  btn1.addEventListener("click", () => {
+    isChecked ? bigBox() : smallBox();
+  })
+  function bigBox() {
+    box.style.transform = "scale(1.3)";
+    box.style.transition = '2s';
+    btn1.textContent = "네모 줄이기";
+    msg.textContent = '네모가 커졌다';
     isChecked = !isChecked;
   }
+  function smallBox() {
+    box.style.transform = "scale(1)";
+    btn1.textContent = "네모 키우기";
+    msg.textContent = '네모가 작아졌다';
+    isChecked = !isChecked;
+  }
+
+  btn2.addEventListener("click", () => {
+    box.style.transform = 'rotate(180deg)';
+    box.style.transition = '2s';
+    msg.textContent = '네모가 회전했다';
+  })
 
 </script>
