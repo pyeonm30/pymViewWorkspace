@@ -84,7 +84,8 @@
   const answerArr = [0, 0, 0, 0];
 
   btns[0].addEventListener('click', () => {
-    const questionArr = document.querySelectorAll(".quesetion span");
+    const questionArr = document.querySelectorAll(".question span");
+    console.log(questionArr);
     const inputArr = document.querySelectorAll("input");
     let index = 0;
     let total = 0;
@@ -92,6 +93,7 @@
       if (input.value == answerArr[index]) {
         total += 1;
         questionArr[index].style.textDecoration = "none";
+        questionArr[index].style.color = 'black';
       } else {
         questionArr[index].style.textDecoration = "line-through";
         questionArr[index].style.color = 'red';
