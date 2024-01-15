@@ -11,6 +11,7 @@
       width: 500px;
       height: 800px;
       display: flex;
+      flex-wrap: wrap;
     }
 
     .box {
@@ -24,15 +25,31 @@
     #first {
       background-color: aqua;
     }
+
+    button {
+      border: none;
+      font-size: 1.2em;
+      padding: 20px;
+      background-color: royalblue;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: white;
+    }
   </style>
 </head>
 
 <body>
+  <button class="btn1"> 박스 추가 </button>
+  <button class="btn2"> 박스 삭제 </button>
   <div class="list">
     <div id="first" class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
   </div>
+
 
 </body>
 
@@ -40,12 +57,26 @@
 <script>
   const list = document.querySelector('.list');
   const boxs = document.querySelectorAll('.box');
-  console.log(list);
-  //div 객체 생성 
-  const newbox = document.createElement('div'); // <div></div>
-  newbox.classList.add('box');// <div class="box"></div>
-  console.log(newbox);
-  list.appendChild(newbox);
+  const buttons = document.querySelectorAll('button');
+  //console.log(buttons[0]);
+  //console.log(buttons[1]);
+  //div 객체 생성
+  // const newbox = document.createElement('div'); // <div></div>
+  // newbox.classList.add('box');// <div class="box"></div>
+  // console.log(newbox);
+  // list.appendChild(newbox);
+  // list.removeChild(boxs[0]);
 
-  list.removeChild(boxs[0]);
+  // function addBox(target) {
+  //   console.log(traget)
+  //   const newbox = document.createElement('div');
+  //   newbox.classList.add('box');
+  //   list.appendChild(newbox);
+  // }
+
+  buttons[0].addEventListener("click", () => {
+    const newbox = document.createElement('div');
+    newbox.classList.add('box');
+    list.appendChild(newbox);
+  });
 </script>
