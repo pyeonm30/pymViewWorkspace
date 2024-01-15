@@ -27,6 +27,10 @@
 
     }
 
+    span {
+      /* text-decoration: line-through; */
+    }
+
     .answer {
       margin-top: 10px;
     }
@@ -75,9 +79,62 @@
 </html>
 
 <script>
+  const btns = document.querySelectorAll('button');
+  const list = document.querySelector('.list');
+  const answerArr = [0, 0, 0, 0];
+
+  btns[0].addEventListener('click', () => {
+    const questionArr = document.querySelectorAll(".quesetion span");
+    const inputArr = document.querySelectorAll("input");
+    let index = 0;
+    let total = 0;
+    inputArr.forEach(input => {
+      if (input.value == answerArr[index]) {
+        total += 1;
+        questionArr[index].style.textDecoration = "none";
+      } else {
+        questionArr[index].style.textDecoration = "line-through";
+        questionArr[index].style.color = 'red';
+      }
+      index += 1;
+    })
+    document.querySelector('.score').innerHTML = `${total}점`;
+
+  });
+  btns[1].addEventListener('click', () => {
+    list.innerHTML = '';
+    document.querySelector('.score').innerHTML = '0점';
+    makeQuiz();
+  });
+
+
   function makeQuiz() {
     // console.log(" 실행 완료 ");
     // 문제를 4개 만들어준다 
+    for (let idx in answerArr) {
+      let num1 = parseInt(Math.random() * 20) + 1;
+      let num2 = parseInt(Math.random() * 20) + 1;
+      let op = parseInt(Math.random() * 4);
+      let operator = '';
+      switch (op) {
+        case 0: operator = '+'; answerArr[idx] = num1 + num2; break;
+        case 1: operator = '-'; answerArr[idx] = num1 - num2; break;
+        case 2: operator = '*'; answerArr[idx] = num1 * num2; break;
+        case 3: operator = '/'; answerArr[idx] = parseInt(num1 / num2); break;
+      }
+      let question = document.createElement('div');
+      question.classList.add("question");
+      let quiz = document.createElement('span');
+      quiz.innerHTML = `${num1} ${operator} ${num2} =`;
+      let input = document.createElement('input');
+      input.type = 'number';
+
+      question.appendChild(quiz);
+      question.appendChild(input);
+      list.appendChild(question);
+
+
+    }
   }
 
 </script>
