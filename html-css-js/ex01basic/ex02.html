@@ -20,12 +20,16 @@
       border: 1px solid red;
       margin: 5px;
     }
+
+    #first {
+      background-color: aqua;
+    }
   </style>
 </head>
 
 <body>
   <div class="list">
-    <div class="box"></div>
+    <div id="first" class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
   </div>
@@ -33,3 +37,15 @@
 </body>
 
 </html>
+<script>
+  const list = document.querySelector('.list');
+  const boxs = document.querySelectorAll('.box');
+  console.log(list);
+  //div 객체 생성 
+  const newbox = document.createElement('div'); // <div></div>
+  newbox.classList.add('box');// <div class="box"></div>
+  console.log(newbox);
+  list.appendChild(newbox);
+
+  list.removeChild(boxs[0]);
+</script>
