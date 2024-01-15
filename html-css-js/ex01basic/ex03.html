@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: pink;
+      margin: 10px;
+      /* transform: translateX(200px); */
+      /* transition: 2s; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <button class="btn"> 네모 움직여 </button>
+</body>
+
+</html>
+
+<script>
+  const box = document.querySelector('.box');
+  const btn = document.querySelector('.btn');
+
+  // function clicked() {
+  //   const box = document.querySelector('.box');
+  //   box.style.transform = "translateX(200px)"; // transform : ta
+  //   box.style.transition = '2s';
+  //   btn.textContent = "네모 돌아와";
+  //   // btn.innerHTML = '네모 돌아와';
+
+  //   // innterHTML vs textContent 
+  //   // innterHTML -> 전체적인 html DOM tree 다시 생성 
+  //   // textContent -> 부분적으로 해당 요소만 리렌더링 리페인팅 됨 
+  //   // text 변동이 많으면 textContent를 사용하는 것이 더 낫다 
+  // }
+  // function clicked() {
+  //   const box = document.querySelector('.box');
+  //   box.style.transform = "translateX(0px)"; // transform : ta
+  //   box.style.transition = '2s';
+  //   btn.textContent = "네모 움직여";
+  // }
+
+  let isChecked = true;
+
+  btn.addEventListener("click", () => {
+    isChecked ? moveBox() : combackBox();
+  })
+  // btn.addEventListener("click", () => {
+  //   console.log("클릭2");
+  //   const box = document.querySelector('.box');
+  //   box.style.transform = "translateX(0px)"
+  //   btn.textContent = "네모 움직여";
+  // })
+  // btn.addEventListener("mouseout", () => {
+
+  // })
+  function moveBox() {
+    const box = document.querySelector('.box');
+    box.style.transform = "translateX(200px)"
+    box.style.transition = '2s';
+    btn.textContent = "네모 돌아와";
+    isChecked = !isChecked;
+  }
+  function combackBox() {
+    const box = document.querySelector('.box');
+    box.style.transform = "translateX(0px)"
+    btn.textContent = "네모 움직여";
+    isChecked = !isChecked;
+  }
+
+</script>

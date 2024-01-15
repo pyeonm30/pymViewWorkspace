@@ -56,7 +56,7 @@
 </html>
 <script>
   const list = document.querySelector('.list');
-  const boxs = document.querySelectorAll('.box');
+  let boxs = document.querySelectorAll('.box');
   const buttons = document.querySelectorAll('button');
   //console.log(buttons[0]);
   //console.log(buttons[1]);
@@ -78,5 +78,17 @@
     const newbox = document.createElement('div');
     newbox.classList.add('box');
     list.appendChild(newbox);
+    alert('박스 추가 완료');
   });
+
+  buttons[1].addEventListener("click", () => {
+    boxs = document.querySelectorAll('.box');
+    // console.log('test=', boxs);
+    if (boxs.length === 0) {
+      alert('더이상 삭제할 박스가 없습니다')
+      return;
+    }
+    list.removeChild(boxs[0]);
+    alert('박스 삭제 완료');
+  })
 </script>
