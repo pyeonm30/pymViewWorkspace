@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- load : html 요소의 DOM tree 다 로드됬다  -->
+  <!-- script 태그가 위에 있어도 defer 통해서 html 다 로드후에 실행해줘  
+  스크립트를 미리 실행하지않고 모든 리소스가 다 다운된 다음에 실행해 
+  -->
+  <script defer src="index.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div class="line horizontal"></div>
+  <div class="line vartical"></div>
+  <img class="target" src="img/target.png" alt="target">
+  <span class="loc"> X:50 Y:50</span>
+
+</body>
+
+</html>
