@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1></h1>
+  <!-- 0.05 => 마다 한번식 cnt 증가되요 , 50 -->
+  <button class="btn1">1초 뒤에 초기화 다시시작</button>
+  <button class="btn2"> 완전 종료 </button>
+</body>
+
+</html>
+<script>
+  // html 태그 요소와 일반 변수를 구분하기 위해서 태그 객체는 앞에 $ 으로 구별해주기도 한다
+  const $h1 = document.querySelector('h1');
+  const $btn1 = document.querySelector('.btn1');
+  const $btn2 = document.querySelector('.btn2');
+  let cnt = 0;
+  const sayHi = () => {
+    $h1.textContent = `${++cnt} sayHi~`;
+  }
+  let interval = setInterval(sayHi, 50);
+
+  // 
+  // const clickBtn = () => {
+  //   console.log("클릭버튼했음")
+  //   clearInterval(interval);
+  //   // 버튼을 다시 클릭하지못하게 
+  //   //$btn1.removeEventListener('click', clickBtn);
+  //   setTimeout(() => {
+  //     //clearInterval(interval);
+  //     console.log(" 재시작 버튼 누름~");
+  //     cnt = 0;
+  //     interval = setInterval(sayHi, 50);
+  //     //$btn1.addEventListener('click', clickBtn);
+  //   }, 1000)
+  // }
+  let clickable = true; // flag 변수 
+  const clickBtn = () => {
+    if (!clickable) return;
+
+    clearInterval(interval);
+    clickable = false;
+    setTimeout(() => {
+      console.log(" 재시작 버튼 누름~");
+      cnt = 0;
+      interval = setInterval(sayHi, 50);
+      clickable = true;
+    }, 1000)
+  }
+  const exitBtn = () => {
+    clearInterval(interval);
+  }
+
+  $btn1.addEventListener('click', clickBtn);
+  $btn2.addEventListener('click', exitBtn);
+
+</script>
