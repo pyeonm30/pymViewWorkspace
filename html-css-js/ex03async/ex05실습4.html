@@ -79,4 +79,29 @@
   let data = ["충주", "부산", "대구", "경기", "광주", "광양", "제주", "용인"]
   let $addBtn = document.querySelector(".addBtn");
   let $stopBtn = document.querySelector(".stopBtn");
+  let $grid = document.querySelector(".grid");
+  let cnt = 0;
+  let interval = null;
+  let run = () => {
+    clearInterval(interval);
+    interval = setInterval(() => {
+      addBox();
+    }, 300)
+  }
+
+  function addBox() {
+    if (cnt >= data.length) return;
+    let box = document.createElement("div");
+    box.classList.add("box");
+    box.innerHTML = data[cnt];
+    $grid.appendChild(box);
+    cnt += 1;
+  }
+
+  $addBtn.addEventListener('click', run)
+  $stopBtn.addEventListener('click', () => {
+    clearInterval(interval);
+  })
+
+
 </script>
