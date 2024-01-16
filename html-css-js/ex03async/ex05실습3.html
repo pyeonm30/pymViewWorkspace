@@ -75,4 +75,26 @@
 </html>
 <script>
   let data = ["충주", "부산", "대구", "경기", "광주", "광양", "제주", "용인"]
+  let $addBtn = document.querySelector(".addBtn");
+  let $grid = document.querySelector(".grid");
+  let cnt = 0;
+
+  function addBoxs() {
+    if (cnt >= data.length) return;
+    for (let idx = 0; idx < data.length; idx++) {
+      setTimeout(() => {
+        let box = document.createElement("div"); // <div></div>
+        box.classList.add("box");
+        box.innerHTML = data[idx];
+        $grid.appendChild(box);
+        cnt += 1;
+      }, idx * 300);
+    }
+  }
+  let isClick = false;
+  $addBtn.addEventListener('click', () => {
+    if (!isClick) addBoxs();
+    isClick = true;
+  });
+
 </script>
