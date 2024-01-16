@@ -90,7 +90,10 @@
   }
 
   function addBox() {
-    if (cnt >= data.length) return;
+    if (cnt >= data.length) {
+      clearInterval(interval);
+      return;
+    }
     let box = document.createElement("div");
     box.classList.add("box");
     box.innerHTML = data[cnt];
@@ -99,9 +102,7 @@
   }
 
   $addBtn.addEventListener('click', run)
-  $stopBtn.addEventListener('click', () => {
-    clearInterval(interval);
-  })
+  $stopBtn.addEventListener('click', () => { clearInterval(interval) });
 
 
 </script>
