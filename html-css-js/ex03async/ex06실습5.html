@@ -125,12 +125,8 @@
 
   let nameList = ["김영우", "김준영", "김진수", "김태하", "박윤재", "서원우", "손지영", "신기훈", "신현기",
     "원우연", "유민석", "윤경재", "이상준", "이준영", "조웅재", "최승현"];
-
-  let list = null;
-  let before = null;
-  let idx = 0; // 시작값 
-  let selectedList = document.querySelector('#selectedList');
-  let userList = document.querySelector('#userList');
+  let $selectedList = document.querySelector('#selectedList');
+  let $userList = document.querySelector('#userList');
   let $addBtn = document.querySelector('#btnAdd');
 
   // [1]nameList =>  userList에 class="item" 다 추가하기 
@@ -140,7 +136,7 @@
     let li = document.createElement("li");
     li.classList.add("item");
     li.innerHTML = name;
-    userList.appendChild(li);
+    $userList.appendChild(li);
     //userList.innerHTML += `<li class="item">${name}</li>`;
     return li; // <li class="item">${name}</li>
   }
@@ -168,6 +164,38 @@
   $addBtn.addEventListener('click', addNewName);
 
   //[4] 시작할때 on 붙여주기 
+  let before = list[0];
+  let idx = 0; // 시작값 
+  let timer = null;
+  let timeoutTimer = null;
+
+  function move() {
+    before.classList.remove("on");
+    idx++;
+    if (idx >= list.length) {
+      idx = 0;
+    }
+    list[idx].classList.add("on");
+    before = list[idx];
+  }
+
+  function stopTimeOut() {
+    list[idx].classList.remove("on");
+    list[idx].classList.add("fix");
+    $selectedList.appendChild(list[idx]);
+    // 이미 select 한 값은 빼줘야한다
+    list.splice(idx, 1);
+  }
+
+  document.querySelector("#btnStart").addEventListener('click', () => {
+    clearInterval(timer);
+    timer = setInterval(move, 50);
+  })
+  document.querySelector("#btnStop").addEventListener('click', () => {
+    clearInterval(timer);
+    stopTimeOut();
+  })
+
 
 
 </script>
