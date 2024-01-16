@@ -166,7 +166,7 @@
   //[4] 시작할때 on 붙여주기 
   let before = list[0];
   let idx = 0; // 시작값 
-  let timer = null;
+  let intervalTimer = null;
   let timeoutTimer = null;
 
   function move() {
@@ -178,22 +178,42 @@
     list[idx].classList.add("on");
     before = list[idx];
   }
+  // 1단계
+  // function stopTimeOut() {
+  //   list[idx].classList.remove("on");
+  //   list[idx].classList.add("fix");
+  //   $selectedList.appendChild(list[idx]);
+  //   // 이미 select 한 값은 빼줘야한다
+  //   list.splice(idx, 1);
+  // }
 
-  function stopTimeOut() {
-    list[idx].classList.remove("on");
-    list[idx].classList.add("fix");
-    $selectedList.appendChild(list[idx]);
-    // 이미 select 한 값은 빼줘야한다
-    list.splice(idx, 1);
+  // 2단계
+  function stopTimeOut(time) {
+
+    // 재귀함수는 나가는 조건이 있어야한다 
+    if (time >= 1000) {
+      list[idx].classList.remove("on");
+      list[idx].classList.add("fix");
+      $selectedList.appendChild(list[idx]);
+      // 이미 select 한 값은 빼줘야한다
+      list.splice(idx, 1);
+      return;
+    }
+    clearTimeout(timeoutTimer);
+    timeoutTimer = setTimeout(() => {
+      move();
+      // 자기자신의 함수를 초를 증가하면서 호출한다
+      stopTimeOut(time + 100);
+    }, time);
   }
 
   document.querySelector("#btnStart").addEventListener('click', () => {
-    clearInterval(timer);
-    timer = setInterval(move, 50);
+    clearInterval(intervalTimer);
+    intervalTimer = setInterval(move, 50);
   })
   document.querySelector("#btnStop").addEventListener('click', () => {
-    clearInterval(timer);
-    stopTimeOut();
+    clearInterval(intervalTimer);
+    stopTimeOut(100);
   })
 
 
