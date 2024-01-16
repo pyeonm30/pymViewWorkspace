@@ -207,13 +207,19 @@
     }, time);
   }
 
+  let isClick = false;
   document.querySelector("#btnStart").addEventListener('click', () => {
+    if (isClick) return;
     clearInterval(intervalTimer);
     intervalTimer = setInterval(move, 50);
+    isClick = true;
   })
   document.querySelector("#btnStop").addEventListener('click', () => {
+    if (!isClick) return;
     clearInterval(intervalTimer);
+    clearTimeout(timeoutTimer);
     stopTimeOut(100);
+    isClick = false;
   })
 
 
