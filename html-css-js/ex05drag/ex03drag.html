@@ -45,3 +45,30 @@
 </body>
 
 </html>
+<script>
+  const list = document.querySelector(".list");
+  const boxs = [...document.querySelectorAll(".box")];
+
+  boxs.forEach((box) => {
+    box.setAttribute("draggable", "true");
+    box.addEventListener('dragstart', e => {
+      e.dataTransfer.setData('num', e.target.innerText);
+    })
+    //console.log(box);
+  })
+
+
+  list.addEventListener('dragover', e => {
+    // 드레그오버를 할수있도록 기본이벤트 막기 
+    e.preventDefault();
+    //console.log(e.target);
+    //
+
+  })
+  list.addEventListener('drop', e => {
+    e.preventDefault();
+    let num = e.dataTransfer.getData('num');
+    console.log('num=', num);
+  })
+
+</script>
