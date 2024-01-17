@@ -1,6 +1,7 @@
 const items = document.querySelector('.items');
 const input = document.querySelector('.footer_input');
 const addBtn = document.querySelector('.footer_btn');
+
 let id = 1;
 
 function addItem() {
@@ -43,4 +44,23 @@ input.addEventListener('keydown', (event) => {
     addItem();
   }
   //console.log(event.code);
+})
+
+function deleteItem(id) {
+  const delItem = document.querySelector(`.item_row[data-id='${id}']`);
+  delItem.remove();
+}
+items.addEventListener('click', (event) => {
+  let id = event.target.getAttribute('data-id');
+  if (!id) {
+    // path / svg 선택했을때 path로 잡히면 그것에 부모인 svg(data-id) 선택
+    id = event.target.parentElement.getAttribute('data-id');
+    // 아이템을 선택했을시는 삭제 안되게 막아줌 
+    if (event.target.parentElement.classList.value === 'item_row') return;
+    // console.log(id);
+    // console.log("test1=", event.target);
+    // console.log("test2=", event.target.parentElement);
+  }
+  id && deleteItem(id);
+  // console.log(event.currentTarget);
 })
