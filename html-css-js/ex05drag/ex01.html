@@ -47,19 +47,21 @@
   const span = document.querySelector("span");
   const box1 = document.querySelector(".box1");
   const box2 = document.querySelector(".box2");
+  const list = document.querySelector(".list");  
+
   //요소.setAttribute("키","값");
   //img.setAttribute("draggable", true);
   //alert(img)
 
   // // 모든 요소들은 dragover 기본적으로 하지못하도록 막아놈
-  // box1.addEventListener('dragover', e => {
-  //   // 드레그오버를 할수있도록 기본이벤트 막기 
-  //   e.preventDefault();
-  // })
-  // box1.addEventListener('drop', e => {
-  //   box1.appendChild(span);
-  //   box1.appendChild(img);
-  // })
+  list.addEventListener('dragover', e => {
+    // 드레그오버를 할수있도록 기본이벤트 막기 
+    e.preventDefault();
+  })
+  list.addEventListener('drop', e => {
+    e.target.appendChild(span);
+    e.target.appendChild(img);
+  })
 
   // box2.addEventListener('dragover', e => {
   //   // 드레그오버를 할수있도록 기본이벤트 막기 
@@ -70,26 +72,29 @@
   //   box2.appendChild(img);
   // })
 
-  let isChange = true;
-
-  box1.addEventListener("dragstart", changeBox)
-  box2.addEventListener("dragstart", changeBox)
-
-  function changeBox() {
-    let box = isChange ? box2 : box1;
-    box.addEventListener('dragover', e => {
-      // 드레그오버를 할수있도록 기본이벤트 막기 
-      e.preventDefault();
-    })
-    box.addEventListener('drop', e => {
-      box.appendChild(span);
-      box.appendChild(img);
-    })
-
-    isChange = !isChange;
+  
 
 
-  }
+  // let isChange = true;
+
+  // box1.addEventListener("dragstart", changeBox)
+  // box2.addEventListener("dragstart", changeBox)
+
+  // function changeBox() {
+  //   let box = isChange ? box2 : box1;
+  //   box.addEventListener('dragover', e => {
+  //     // 드레그오버를 할수있도록 기본이벤트 막기 
+  //     e.preventDefault();
+  //   })
+  //   box.addEventListener('drop', e => {
+  //     box.appendChild(span);
+  //     box.appendChild(img);
+  //   })
+
+  //   isChange = !isChange;
+
+
+  // }
 
 
 </script>
