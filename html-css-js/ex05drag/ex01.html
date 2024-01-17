@@ -5,10 +5,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box1,
+    .box2 {
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    img {
+      width: 50%;
+      height: 50%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 <body>
-
+  <div class="list">
+    <div class="box1">
+      <span>팩맨</span>
+      <img src="./packman.png" />
+    </div>
+    <div class="box2"></div>
+  </div>
 </body>
 
 </html>
