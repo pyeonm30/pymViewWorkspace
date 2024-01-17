@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 class="test1"></h1>
+  <h1 class="test2"></h1>
+  <h1 class="test3"></h1>
+</body>
+
+</html>
+<script>
+  // const test1 = document.querySelector(".test1");
+  // const test2 = document.querySelector(".test2");
+  // const test3 = document.querySelector(".test3");
+
+  const [test1, test2, test3] = [...document.querySelectorAll('h1')];
+  test1.innerHTML = '<p style="color:red"> innerHTML</p>';
+  test2.innerText = '<p style="color:red"> >innerTest</p>';
+  test3.textContent = '<p style="color:red">>textContent</p>';
+</script>
