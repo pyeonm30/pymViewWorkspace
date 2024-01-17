@@ -36,3 +36,11 @@ function addToList(value) {
 }
 
 addBtn.addEventListener('click', addItem);
+input.addEventListener('keydown', (event) => {
+  // 한글 입력시 두번 이벤트 처리되는것 막아주는 역할 
+  if (event.isComposing) return;
+  if (event.code === 'Enter') {
+    addItem();
+  }
+  //console.log(event.code);
+})
