@@ -64,3 +64,29 @@
 </body>
 
 </html>
+<script>
+  const container = document.querySelector('.container');
+  const input = document.querySelector('input');
+  const trash = document.querySelector('.trash');
+  const boxs = [...document.querySelectorAll('.box')];
+  let cnt = 1;
+
+  container.addEventListener('click', (e) => {
+    //console.log(e.target);
+    if (e.target.innerText) return;
+    e.target.innerText = cnt++;
+  })
+
+  input.addEventListener("keyup", () => {
+    let value = input.value;
+    if (value.trim() === '') return;
+    let getBox = boxs.find(box => box.innerText == value);
+    getBox && getBox.classList.add('on');
+  })
+  input.addEventListener("keydown", () => {
+    let getBox = boxs.find(box => box.classList.contains('on'));
+    getBox && getBox.classList.remove('on');
+    if (getBox) getBox.innerHTML = "";
+  });
+
+</script>
