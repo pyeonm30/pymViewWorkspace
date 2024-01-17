@@ -59,17 +59,18 @@
   })
 
 
-  list.addEventListener('dragover', e => {
+  zone2.addEventListener('dragover', e => {
     // 드레그오버를 할수있도록 기본이벤트 막기 
     e.preventDefault();
     //console.log(e.target);
     //
 
   })
-  list.addEventListener('drop', e => {
+  zone2.addEventListener('drop', e => {
     e.preventDefault();
     let num = e.dataTransfer.getData('num');
     console.log('num=', num);
+    //zone2.appendChild(e.target);
     //zone2.appendChild(e.target);
     zone2.appendChild(boxs.find(box => box.innerText == num));
   })
