@@ -14,9 +14,9 @@
       position: relative;
     }
 
-    .box:nth-child(1) {
+    /* .box:nth-child(1) {
       left: 10px;
-    }
+    } */
   </style>
 </head>
 
@@ -27,3 +27,24 @@
 </body>
 
 </html>
+<script>
+  const boxs = [...document.querySelectorAll(".box")];
+  function move(element, endPoint) {
+    let left = element.style.left;
+
+    function draw() {
+      left++;
+      element.style.left = left + 'px';
+      if (left == endPoint) {
+        clearInterval(timer);
+      }
+    }
+    let timer = setInterval(draw, 1);
+  }
+  boxs.forEach(box => {
+    box.addEventListener('click', () => {
+      move(box, 100);
+    })
+  })
+
+</script>
