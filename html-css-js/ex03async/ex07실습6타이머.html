@@ -33,3 +33,28 @@
 </body>
 
 </html>
+<script>
+  const totalTime = 5 * 1000; // 5초
+  const startTime = new Date().getTime();
+
+  let changeTime = () => {
+    const now = new Date().getTime();
+    const diff = now - startTime;
+    // 남은 시간 
+    const remain = totalTime - diff;
+    // 초단위 변환
+    const remainSec = (remain / 1000).toFixed(2);
+    let label = `남은시간 ${remainSec}초`;
+
+    if (remainSec <= 0) {
+      // 타이머 종료 
+      clearInterval(interval);
+      label = '5초가 지났습니다';
+    }
+    document.querySelector('.second').innerHTML = label;
+
+  }
+
+  const interval = setInterval(changeTime, 10);
+
+</script>
