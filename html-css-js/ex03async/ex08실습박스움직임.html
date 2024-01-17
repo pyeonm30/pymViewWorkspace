@@ -14,6 +14,24 @@
       position: relative;
     }
 
+    .testBox {
+      width: 50px;
+      height: 50px;
+      /* position: absolute; */
+      background-color: pink;
+      /* animation: dropBox 1s ease-in 1; */
+    }
+
+    /* @keyframes dropBox {
+      from {
+        top: 0px
+      }
+
+      to {
+        top: 500px
+      }
+    } */
+
     /* .box:nth-child(1) {
       left: 10px;
     } */
@@ -24,6 +42,7 @@
   <div class="box"></div>
   <div class="box"></div>
   <div class="box"></div>
+  <div class="testBox"></div>
 </body>
 
 </html>
@@ -46,5 +65,16 @@
       move(box, 100);
     })
   })
+  const testBox = document.querySelector(".testBox");
+  testBox.addEventListener('click', () => {
+    testBox.style.position = 'absolute';
+    testBox.animate({
+      top: ['0px', '500px']
+    }, {
+      duration: 500,
+      easing: 'ease-in',
+      iterations: 1, // infinity or a number
+    })
+  });
 
 </script>
