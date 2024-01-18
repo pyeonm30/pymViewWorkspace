@@ -93,6 +93,7 @@ class Game1To50 {
     this.container.appendChild(div);
     return div;
   }
+
   hintNum() {
     const getDiv = this.nodeList.find(
       (div) => this.gameNum == div.innerHTML * 1
@@ -114,11 +115,12 @@ class Game1To50 {
       }
       this.gameNum++;
     }
-    if (this.gameNum == 50) {
-      setTimeout(reset, 300);
+    if (this.gameNum > 50) {
+      setTimeout(this.reset, 300);
     }
   };
   reset = () => {
+
     clearInterval(this.gameTime);
     this.container.innerHTML = '';
     this.frontList = [];

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1></h1>
+</body>
+
+</html>
+<script>
+  const text = document.querySelector("h1");
+
+  const today = new Date();
+  function getTime() {
+    const diff = Date.now() - today.getTime();
+
+    let sec = Math.floor(diff / 1000);
+    let min = Math.floor(sec / 60);
+    let milSec = diff % 1000 / 100;
+    text.innerHTML = `${min}: ${sec}:${milSec}`;
+
+  }
+  function init() {
+    setInterval(getTime, 10)
+  }
+
+  init()
+</script>
