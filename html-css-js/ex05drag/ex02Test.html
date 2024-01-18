@@ -73,6 +73,8 @@
 
   container.addEventListener('click', (e) => {
     //console.log(e.target);
+
+    if (e.target === e.currentTarget) return;
     if (e.target.innerText) return;
     e.target.innerText = cnt++;
   })
@@ -89,4 +91,25 @@
     if (getBox) getBox.innerHTML = "";
   });
 
+  boxs.forEach(box => {
+    box.setAttribute("draggable", "true");
+    box.addEventListener('dragstart', e => {
+      if (!e.target.innerText) return;
+      e.dataTransfer.setData('num', e.target.innerHTML);
+      e.target.classList.add('active');
+      setTimeout(() => { e.target.classList.remove('active') }, 300);
+    })
+  })
+
+  trash.addEventListener('dragover', e => e.preventDefault());
+  trash.addEventListener('drop', e => {
+    let num = e.dataTransfer.getData('num');
+    num && removeBox(num);
+    e.preventDefault()
+  });
+
+  function removeBox(num) {
+    let delBox = boxs.find(box => box.innerText == num);
+    delBox && container.removeChild(delBox);
+  }
 </script>
