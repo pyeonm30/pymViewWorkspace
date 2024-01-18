@@ -8,9 +8,7 @@ class TicTacToe {
     this.winner = null;
   }
   // td 객체들을 이차원으로 만들어주기 
-  createNodeList() {
-
-  }
+  createNodeList() {}
   playGame(td) {}
   showGame() {}
   winCheck(innerText) {}
