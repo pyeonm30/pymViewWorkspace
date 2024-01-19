@@ -10,12 +10,17 @@
 
 <body>
 
-  <form>
+  <form id="saveForm">
     <input type="text">
     <input type="submit" value="저장하기">
   </form>
+
+  <form id="deleteForm">
+    <input type="text">
+    <input type="submit" value="삭제하기">
+  </form>
+
   <div class="save">
-    <input type="text" placeholder="test" />
   </div>
 </body>
 
@@ -23,14 +28,14 @@
 <script>
 
   const save = document.querySelector('.save');
-  const form = document.querySelector("form");
-  const input = form.querySelector("input");
+  const form1 = document.querySelector(".saveForm");
+  const input1 = form1.querySelector("input");
   const inputData = [];
 
   form.addEventListener("submit", e => {
     e.preventDefault();
     localStorage.setItem('input_data', JSON.stringify(inputData));
-    input.value = '';
+    input1.value = '';
     window.location.reload(); // 페이지 새로고침 
   })
   save.innerHTML = localStorage.getItem('input_data');
