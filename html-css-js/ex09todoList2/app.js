@@ -20,3 +20,5 @@ class App {
   //todo값 삭제하기 
 
 }
+
+const app = new App();
