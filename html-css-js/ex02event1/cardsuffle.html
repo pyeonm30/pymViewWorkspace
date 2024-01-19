@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --card-height: 150px;
+      --card-width: 100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    div {
+      height: 50vh;
+
+    }
+
+    .cardDeck {
+      position: relative;
+      border: 1px solid black;
+    }
+
+    .card {
+      border: 1px solid blue;
+      width: var(--card-width);
+      height: var(--card-height);
+      transition: 1s;
+      position: absolute;
+      text-align: center;
+      line-height: 150px;
+      background-color: powderblue;
+
+    }
+
+    .leftTop {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .leftBottom {
+      position: absolute;
+      top: calc(100% - var(--card-height));
+      left: 0;
+    }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .rightTop {
+      position: absolute;
+      top: 0;
+      left: calc(100% - var(--card-width));
+    }
+
+    .rightBottom {
+      position: absolute;
+      top: calc(100% - var(--card-height));
+      left: calc(100% - var(--card-width));
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cardDeck">
+    <div class="card">1</div>
+    <div class="card">2</div>
+    <div class="card">3</div>
+    <div class="card">4</div>
+    <div class="card">5</div>
+  </div>
+
+  <button class="btn1"> 카드 모우기 </button> <button class="btn2"> 카드 배분 </button>
+
+  <script>
+    const cardDeck = document.querySelector(".cardDeck");
+    const btn1 = document.querySelector(".btn1");
+    const btn2 = document.querySelector(".btn2");
+    const cards = [...document.querySelectorAll(".card")];
+    const num = [1, 2, 3, 4, 5];
+    const positions = ["leftTop", "leftBottom", "center", "rightTop", "rightBottom"];
+
+
+    const cardSetup = () => {
+      cards.forEach((card, idx) => card.classList.add(positions[idx]));
+    }
+
+    cardSetup();
+
+    btn1.addEventListener("click", () => {
+      cards.forEach((card, idx) => {
+
+        card.style.top = '50%';
+        card.style.left = '50%';
+        card.style.transform = 'translate(-50%, -50%)';
+
+        card.classList.remove(positions[idx]);
+      })
+
+    })
+
+    function randomCard() {
+      cards.forEach((card) => {
+        card.style = '';
+      })
+
+      for (let i = 0; i < 1000; i += 1) {
+        let idx = parseInt(Math.random() * cards.length);
+        let temp = cards[0];
+        cards[0] = cards[idx];
+        cards[idx] = temp;
+      }
+
+      cardDeck.innerHTML = '';
+
+      cards.forEach((card) => {
+        cardDeck.appendChild(card);
+      })
+
+
+
+    }
+
+    btn2.addEventListener("click", () => {
+
+      randomCard();
+      cardSetup();
+
+    })
+  </script>
+</body>
+
+</html>
