@@ -39,16 +39,21 @@
     inputData.push(input1.value);
     localStorage.setItem('input_data', JSON.stringify(inputData));
     input1.value = '';
-    window.location.reload(); // 페이지 새로고침 
+    input1.focus();
+    changeSave();
+    //window.location.reload(); // 페이지 새로고침 
   })
 
-  let data = '';
-  inputData.forEach((value) => {
-    data += value + ",";
-  });
-  if (data) {
-    save.innerHTML = data;
+  function changeSave() {
+    let data = '';
+    inputData.forEach((value) => {
+      data += value + ",";
+    });
+    if (data) {
+      save.innerHTML = data;
+    }
   }
+  changeSave();
 
 
 </script>
