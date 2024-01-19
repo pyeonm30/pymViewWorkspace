@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+  <form>
+    <input type="text">
+    <input type="submit" value="저장하기">
+  </form>
+  <div class="save">
+    <input type="text" placeholder="test" />
+  </div>
+</body>
+
+</html>
+<script>
+
+  const save = document.querySelector('.save');
+  const form = document.querySelector("form");
+  const input = form.querySelector("input");
+  const inputData = [];
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    localStorage.setItem('input_data', JSON.stringify(inputData));
+    input.value = '';
+    window.location.reload(); // 페이지 새로고침 
+  })
+  save.innerHTML = localStorage.getItem('input_data');
+
+
+</script>
