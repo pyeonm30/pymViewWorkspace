@@ -31,6 +31,8 @@
   const save = document.querySelector('.save');
   const form1 = document.querySelector("#saveForm");
   const input1 = form1.querySelector("input");
+  const form2 = document.querySelector("#deleteForm");
+  const input2 = form2.querySelector("input");
   const inputData = localStorage.getItem('input_data') ?
     JSON.parse(localStorage.getItem('input_data')) : [];
 
@@ -53,6 +55,28 @@
       save.innerHTML = data;
     }
   }
+
+
+  form2.addEventListener("submit", e => {
+    e.preventDefault();
+    // 젤 처음에 있는 값 인덱스 찾기 
+    let delDataIdx = inputData.findIndex(value => value === input2.value);
+    // 젤 마지막에 있는 값 인덱스 찾기 
+    // let delDataIdx = inputData.findLastIndex(value => value === input2.value);
+    if (delDataIdx == -1) {
+      input2.value = '';
+      input2.focus();
+      return;
+    }
+    inputData.splice(delDataIdx, 1);
+    localStorage.setItem('input_data', JSON.stringify(inputData));
+
+    input2.value = '';
+    input2.focus();
+    changeSave();
+    //window.location.reload(); // 페이지 새로고침 
+  })
+
   changeSave();
 
 
