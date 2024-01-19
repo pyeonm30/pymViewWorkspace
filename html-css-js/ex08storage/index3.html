@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <form>
+    <input type="text">
+    <input type="submit" value="저장하기">
+    <!-- <button> 저장하기 </button> -->
+  </form>
+  <div class="save"></div>
+</body>
+
+</html>
+<script>
+  const input = document.querySelector(`input[type='text']`);
+  const btn = document.querySelector(`input[type='submit']`);
+  const save = document.querySelector('.save');
+
+  btn.addEventListener('click', (e) => {
+    //submit 요청값을 가지고 어디론가(서버로) 간다; => 페이지 새로고침
+    e.preventDefault();
+    localStorage.setItem('input_value', input.value);
+    input.value = '';
+    // window.location.reload(); // 페이지 새로고침 
+    save.innerHTML = localStorage.getItem('input_value');
+  })
+
+  save.innerHTML = localStorage.getItem('input_value');
+
+
+
+</script>
