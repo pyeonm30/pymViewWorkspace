@@ -20,3 +20,33 @@ let hamster = {
 
 
 let pets = [cat, dog, rabbit, hamster, cat];
+
+// some, every 
+let cnt = 0;
+
+pets.forEach(pet => {
+  console.log(cnt++)
+  if (pet.kind === '개') return true;
+})
+
+console.log('--------------');
+
+// 무조건 하나라도 true 값이 있으면 그즉시 중단 
+cnt = 0;
+let res = pets.some(pet => {
+  console.log(cnt++)
+  return pet.kind === '개';
+})
+
+console.log(res);
+console.log('--------------');
+// 무조건 전부 true 여야지만 true ,
+// 중간에 false 있으면 그 즉시 중단 
+cnt = 0;
+res = pets.every(pet => {
+  console.log(cnt++)
+  return pet.kind === '개';
+})
+
+console.log(res);
+console.log(cnt);
