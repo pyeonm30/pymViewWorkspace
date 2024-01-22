@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="800" height="400"></canvas>
+</body>
+
+</html>
+<script>
+  const canvas = document.querySelector("#canvas");
+  const ctx = canvas.getContext("2d"); // x축과 y축으로 canvas는 작동함 
+
+  ctx.fillStyle = "green";
+  //           x축 y축 가로 세로 
+
+  // fill 채운다 stroke : 선 : 윤곽선
+  ctx.fillRect(10, 10, 150, 100);
+  ctx.strokeStyle = "blue";
+  ctx.strokeRect(160, 110, 150, 100);
+
+  // 직선그리기 
+  ctx.beginPath(); // 그릴꺼야 
+  ctx.moveTo(20, 20); // 시작 좌표(x , y) 
+  ctx.lineTo(200, 20); // 끝 좌표 (x, y )
+  ctx.stroke(); // 설정 셋팅 후 항상 마지막에 그려라! => 실제 라인이 그려짐
+
+  // 캔버스 초기화 
+  //ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+
+
+</script>
