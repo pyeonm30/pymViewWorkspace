@@ -38,6 +38,26 @@ function draw() {
   spotList.forEach(spot => drawObj(spot));
   drawObj(player);
 }
+// 1초에 랜덤 spot에서 emeny를 3개씩 생성하라 
+function createEnemyList() {
+  for (let i = 0; i < 3; i += 1) {
+    let spot = spotList[0];
+    let enemy = { x: spot.x, y: spot.y, size: 80, speed: 2, color: 'green', 'alive': 1000 }
+  }
+
+}
+
+function moveEnemyList() {
+  enemyList.forEach(
+    enemy => {
+      enemy.alive -= 1;
+    }
+  )
+}
+
+function deleteDeadEnemy() {
+  //alive  <=  0 enemy 배열에서 삭제 
+}
 //---------
 init();
 draw();
