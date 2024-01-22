@@ -6,7 +6,6 @@ let key = {
   up: false,
   down: false
 }
-
 let player = {
   x: 150,
   y: 150,
@@ -14,7 +13,6 @@ let player = {
   color: 'blue',
   speed: 5
 }
-
 let enemy = {
   x: canvas.width / 2 - 40,
   y: canvas.height / 2 - 40,
@@ -22,13 +20,9 @@ let enemy = {
   color: 'green'
 }
 
-// 키 다운할때는 사각형 움직이고  draw()
 document.addEventListener("keydown", e => {
   keyHandler(e, true);
 })
-
-// 키 업일때는 사각형 안움직인다 
-
 document.addEventListener("keyup", e => {
   keyHandler(e, false);
 })
