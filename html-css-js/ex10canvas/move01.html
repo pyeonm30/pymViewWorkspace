@@ -14,33 +14,21 @@
 
 <body>
   <canvas id="canvas" width="800" height="400"></canvas>
-
 </body>
 
 </html>
 <script>
   const canvas = document.querySelector("#canvas");
   const ctx = canvas.getContext('2d');
-  let radis = 10;
-  let x = radis;
 
-  let draw = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
-    ctx.arc(x, 200, radis, 0, Math.PI * 2);
-    ctx.fillStyle = "green";
-    ctx.fill();
-    x += 1;
-    if (x >= canvas.width - radis) {
-      clearInterval(timer);
-    }
 
-  }
-
-  let timer = setInterval(draw, 3)
-
-  canvas.addEventListener("click", () => {
-    clearInterval(timer);
+  // 키 다운할때는 사각형 움직이고  draw()
+  document.addEventListener("keydown", e => {
+    console.log(e);
+    console.log(e.key);
+    console.log(e.keyCode);
+    console.log(e.code);
   })
+  // 키 업일때는 사각형 안움직인다 
 
 </script>
