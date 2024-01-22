@@ -21,10 +21,24 @@
 <script>
   const canvas = document.querySelector("#canvas");
   const ctx = canvas.getContext('2d');
+  let radis = 10;
+  let x = radis;
 
-  ctx.beginPath()
-  ctx.arc(500, 10, 10, 0, Math.PI * 2);
-  ctx.fillStyle = "green";
-  ctx.fill();
+  let draw = () => {
+    ctx.beginPath();
+    ctx.arc(x, 200, radis, 0, Math.PI * 2);
+    ctx.fillStyle = "green";
+    ctx.fill();
+    x += 1;
+    if (x >= canvas.width - radis) {
+      clearInterval(timer);
+    }
+  }
+
+  let timer = setInterval(draw, 10)
+
+  canvas.addEventListener("click", () => {
+    clearInterval(timer);
+  })
 
 </script>
