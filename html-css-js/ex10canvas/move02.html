@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="canvas" width="800" height="400"></canvas>
+</body>
+
+</html>
+<script>
+  const canvas = document.querySelector("#canvas");
+  const ctx = canvas.getContext('2d');
+  let key = { 'right': false, 'left': false, 'up': false, 'down': false };
+  let player = { 'x': 0, 'y': 0, 'size': 50, 'speed': 1 };
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.rect(player.x, player.y, player.size, player.size);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.closePath();
+
+    movePlayer();
+
+  }
+
+  function movePlayer() {
+    if (key.right && player.x < canvas.width - player.size) {
+      player.x += 5;
+    } else if (key.down && player.y < canvas.height - player.size) { player.y += 5; }
+    else if (key.up && player.y > 0) {
+      player.y -= 5;
+    } else if (key.left && player.x > 0) {
+      player.x -= 5;
+    }
+  }
+
+  // 키 다운할때는 사각형 움직이고  draw()
+  document.addEventListener("keydown", e => {
+    // console.log(e.keyCode);
+    // console.log(e.key);
+    if (e.keyCode === 39 || e.key === 'ArrowRight') {
+      key.right = true;
+      //if (x < canvas.width - size) x += 5;
+    } else if (e.keyCode === 40 || e.key === 'ArrowDown') {
+      key.down = true;
+      // if (y < canvas.height - size) y += 5;
+    } else if (e.keyCode === 38 || e.key === 'ArrowUp') {
+      //if (y > 0) y -= 5;
+      key.up = true;
+    } else if (e.keyCode === 37 || e.key === 'ArrowLeft') {
+      //if (x > 0) x -= 5;
+      key.left = true;
+    }
+
+  })
+
+  // 키 업일때는 사각형 안움직인다 
+
+  document.addEventListener("keyup", e => {
+    console.log(e.keyCode);
+    if (e.keyCode === 39 || e.key === 'ArrowRight') {
+      key.right = false;
+      //if (x < canvas.width - size) x += 5;
+    } else if (e.keyCode === 40 || e.key === 'ArrowDown') {
+      key.down = false;
+      // if (y < canvas.height - size) y += 5;
+    } else if (e.keyCode === 38 || e.key === 'ArrowUp') {
+      //if (y > 0) y -= 5;
+      key.up = false;
+    } else if (e.keyCode === 37 || e.key === 'ArrowLeft') {
+      //if (x > 0) x -= 5;
+      key.left = false;
+    }
+  })
+
+  setInterval(draw, 10)
+
+</script>
