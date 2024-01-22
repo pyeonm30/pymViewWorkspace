@@ -20,14 +20,38 @@
 <script>
   const canvas = document.querySelector("#canvas");
   const ctx = canvas.getContext('2d');
+  const size = 50;
+  let x = 0;
+  let y = 0;
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.rect(x, y, size, size);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  draw();
+
 
 
   // 키 다운할때는 사각형 움직이고  draw()
   document.addEventListener("keydown", e => {
-    console.log(e);
-    console.log(e.key);
-    console.log(e.keyCode);
-    console.log(e.code);
+    // console.log(e.keyCode);
+    // console.log(e.key);
+    if (e.keyCode === 39 || e.key === 'ArrowRight') {
+      if (x < canvas.width - size) x += 5;
+    } else if (e.keyCode === 40 || e.key === 'ArrowDown') {
+      if (y < canvas.height - size) y += 5;
+    } else if (e.keyCode === 38 || e.key === 'ArrowUp') {
+      if (y > 0) y -= 5;
+    } else if (e.keyCode === 37 || e.key === 'ArrowLeft') {
+      if (x > 0) x -= 5;
+    }
+
+    draw();
   })
   // 키 업일때는 사각형 안움직인다 
 
