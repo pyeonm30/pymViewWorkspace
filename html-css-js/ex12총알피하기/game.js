@@ -1,5 +1,6 @@
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext('2d');
+const startBtn = document.querySelector(".startBtn");
 // 정중앙에 위치시키기
 let player = { x: canvas.width / 2 - 25, y: canvas.height / 2 - 25, size: 50, speed: 3 };
 let key = {
@@ -15,7 +16,7 @@ playerImg.src = './bug.png';
 let backImg = new Image();
 backImg.src = './background1.png';
 let backX = 0;
-
+let interval = null;
 let bulletList = []
 let isOver = false;
 
@@ -23,10 +24,10 @@ function init() {
   playerImg.addEventListener("load", () => {
     imgReady = true;
   })
-
+  startBtn.addEventListener("click", gameStart);
   document.addEventListener("keydown", e => keyHandler(e, true));
   document.addEventListener("keyup", e => keyHandler(e, false));
-  createBullets(10);
+
 }
 
 function drawPlayer() {
@@ -102,9 +103,26 @@ function render() {
 }
 
 function gameOver() {
-  alert("게임오버");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  backX = 0;
+  ctx.drawImage(backImg, backX, 0, canvas.width, canvas.height);
+  startBtn.style.visibility = "visible";
 }
 
+function gameStart() {
+  isOver = false;
+  startBtn.style.visibility = "hidden";
+  //플레이어 초기값
+  player.x = canvas.width / 2 - player.size / 2;
+  player.y = canvas.height / 2 - player.size / 2;
+  // 총알 초기화 
+  createBullets(10);
+  // 게임시작 
+  interval = setInterval(render, 10)
+}
 
+//--------------
+backImg.addEventListener("load", () => {
+  ctx.drawImage(backImg, backX, 0, canvas.width, canvas.height);
+})
 init();
-let interval = setInterval(render, 10)
