@@ -66,19 +66,20 @@ class Bullet {
 
   }
 
-  isCollision(px, px, size) {
+  isCollision(px, py, size) {
     // 현재 플레이어랑 총알거리값
     let pdx = this.x - px;
     let pdy = this.y - py;
     let pdc = pdx * pdx + pdy * pdy;
     // let pdc = Math.sqrt(pdx*pdx + pdy*pdy)
 
-    if (Math.pow(size + this.radius) > pdc) {
-      console.log("충돌");
-      return true;
-    } else {
-      return false;
-    }
+    // if (Math.pow(size + this.radius,2) > pdc) {
+    //   console.log("충돌");
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+    return Math.pow(size + this.radius, 2) > pdc;
   }
 
 }

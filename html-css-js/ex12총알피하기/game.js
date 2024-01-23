@@ -12,6 +12,7 @@ let imgReady = false;
 let playerImg = new Image();
 playerImg.src = './bug.png';
 let bulletList = []
+let isOver = false;
 
 function init() {
   playerImg.addEventListener("load", () => {
@@ -19,7 +20,7 @@ function init() {
   })
   document.addEventListener("keydown", e => keyHandler(e, true));
   document.addEventListener("keyup", e => keyHandler(e, false));
-  createBullets(30);
+  createBullets(10);
 }
 
 function drawPlayer() {
@@ -65,19 +66,28 @@ function render() {
   if (!imgReady) return;
   drawPlayer();
   movePlayer();
-  bulletList.forEach(bull => bull.render(ctx));
   bulletList.forEach(bull => { bull.update(player.x, player.y) })
 
   bulletList.forEach(bull => {
-    if (bull.isCollision(player.x, player.y, player.size / 2)) {
+
+    if (bull.isCollision(player.x + player.size / 2, player.y + player.size / 2, player.size / 2)) {
       setTimeout(() => {
-        alert("게임오버");
+        if (!isOver) gameOver();
+        isOver = true;
         clearInterval(interval);
-      }, 300);
+      }, 200);
     }
 
   })
+  console.log("test = ", isOver);
+
+  bulletList.forEach(bull => bull.render(ctx));
 }
+
+function gameOver() {
+  alert("게임오버");
+}
+
 
 init();
 let interval = setInterval(render, 10)
