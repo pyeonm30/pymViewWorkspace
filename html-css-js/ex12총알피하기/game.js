@@ -51,8 +51,10 @@ function movePlayer() {
 
 
 function render() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   if (!imgReady) return;
   drawPlayer();
+  movePlayer();
   // imgReady && drawPlayer();
 }
 
