@@ -79,7 +79,8 @@ class Bullet {
     // } else {
     //   return false;
     // }
-    return Math.pow(size + this.radius, 2) > pdc;
+    //return Math.pow(size + this.radius, 2) > pdc;
+    return (size + this.radius) ** 2 > pdc;
   }
 
 }

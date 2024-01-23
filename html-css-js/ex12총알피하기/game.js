@@ -11,6 +11,11 @@ let key = {
 let imgReady = false;
 let playerImg = new Image();
 playerImg.src = './bug.png';
+
+let backImg = new Image();
+backImg.src = './background1.png';
+let backX = 0;
+
 let bulletList = []
 let isOver = false;
 
@@ -18,6 +23,7 @@ function init() {
   playerImg.addEventListener("load", () => {
     imgReady = true;
   })
+
   document.addEventListener("keydown", e => keyHandler(e, true));
   document.addEventListener("keyup", e => keyHandler(e, false));
   createBullets(10);
@@ -62,16 +68,28 @@ function movePlayer() {
 
 
 function render() {
+  // 배경까지 다 사라진다
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // 다시 배경입히기 
+  backX += 1;
+
+  ctx.drawImage(backImg, backX, 0, canvas.width, canvas.height);
+  // 빈공간을 다시 배경으로 체워주기 
+  ctx.drawImage(backImg, backX - canvas.width, 0, canvas.width, canvas.height);
+  if (backX == canvas.width) {
+    backX = 0;
+  }
+
   if (!imgReady) return;
   drawPlayer();
   movePlayer();
   bulletList.forEach(bull => { bull.update(player.x, player.y) })
 
   bulletList.forEach(bull => {
-
+    // 플레이어의 정중앙에 오게 셋팅해주기 
     if (bull.isCollision(player.x + player.size / 2, player.y + player.size / 2, player.size / 2)) {
       setTimeout(() => {
+        // alert("게임오버");
         if (!isOver) gameOver();
         isOver = true;
         clearInterval(interval);
@@ -79,7 +97,6 @@ function render() {
     }
 
   })
-  console.log("test = ", isOver);
 
   bulletList.forEach(bull => bull.render(ctx));
 }
