@@ -9,9 +9,9 @@ let key = {
   ArrowDown: false
 }
 let imgReady = false;
-
 let playerImg = new Image();
 playerImg.src = './bug.png';
+let bulletList = []
 
 function init() {
   playerImg.addEventListener("load", () => {
@@ -19,6 +19,7 @@ function init() {
   })
   document.addEventListener("keydown", e => keyHandler(e, true));
   document.addEventListener("keyup", e => keyHandler(e, false));
+  createBullets(30);
 }
 
 function drawPlayer() {
@@ -30,11 +31,20 @@ function drawPlayer() {
   ctx.closePath();
 }
 
-
 function keyHandler(e, value) {
   if (key[e.key] !== undefined) {
     key[e.key] = value;
   }
+}
+
+function createBullets(size) {
+  bulletList = [];
+  for (let i = 0; i < size; i++) {
+    let bullet = new Bullet();
+    bullet.init(player.x, player.y);
+    bulletList.push(bullet);
+  }
+
 }
 
 function movePlayer() {
@@ -55,7 +65,8 @@ function render() {
   if (!imgReady) return;
   drawPlayer();
   movePlayer();
-  // imgReady && drawPlayer();
+  bulletList.forEach(bull => bull.render(ctx));
+  bulletList.forEach(bull => bull.update(player.x, player.y))
 }
 
 init();
