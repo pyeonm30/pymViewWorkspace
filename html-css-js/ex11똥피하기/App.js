@@ -46,5 +46,3 @@ class App {
 }
 
 let app = new App();
-
-console.log(document.querySelector('#myCanvas'));
