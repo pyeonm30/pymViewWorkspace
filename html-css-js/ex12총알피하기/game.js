@@ -66,8 +66,18 @@ function render() {
   drawPlayer();
   movePlayer();
   bulletList.forEach(bull => bull.render(ctx));
-  bulletList.forEach(bull => bull.update(player.x, player.y))
+  bulletList.forEach(bull => { bull.update(player.x, player.y) })
+
+  bulletList.forEach(bull => {
+    if (bull.isCollision(player.x, player.y, player.size / 2)) {
+      setTimeout(() => {
+        alert("게임오버");
+        clearInterval(interval);
+      }, 300);
+    }
+
+  })
 }
 
 init();
-setInterval(render, 10)
+let interval = setInterval(render, 10)
