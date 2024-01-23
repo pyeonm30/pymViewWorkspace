@@ -22,15 +22,28 @@ class Bullet {
       this.y = this.radius;
     } else if (location == 1) {
       // 총알이 캔버스 아래에서 시작
-
-
+      this.x = Math.random() * (this.cwidth - this.radius);
+      this.y = this.cheight - this.radius;
     } else if (location == 2) {
       // 총알이 왼쪽에서 시작 
+      this.x = this.radius;
+      this.y = Math.random() * (this.cheight - this.radius);
 
     } else if (location == 3) {
       // 총알이 오른쪽에서 시작 
+      this.x = this.cwidth - this.radius;
+      this.y = Math.random() * (this.cheight - this.radius);
 
     }
+  }
+
+  render(ctx) {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
+    ctx.fillStyle = this.color;
+    ctx.fill();
+    ctx.closePath();
+
   }
 
 }

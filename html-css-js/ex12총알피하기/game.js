@@ -26,7 +26,7 @@ function drawPlayer() {
   //이미지객체 , 시작좌표x, y  이미지크기 가로   세로 
   //ctx.rect(player.x, player.y, player.size, player.size);
   ctx.drawImage(playerImg, player.x, player.y, player.size, player.size);
-  ctx.fill();
+  //ctx.fill();
   ctx.closePath();
 }
 
