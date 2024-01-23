@@ -1,4 +1,4 @@
-class Poop {
+export default class Poop {
   constructor() {
     this.img = new Image();
     this.img.src = './img/poop.png';

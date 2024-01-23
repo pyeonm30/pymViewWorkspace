@@ -1,4 +1,5 @@
-class Player {
+export default class Poop {
+  //class Player {
   constructor() {
     this.img = new Image();
     this.img.src = './img/player.png';
@@ -53,3 +54,5 @@ class Player {
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 }
+
+//export default let count =0;
