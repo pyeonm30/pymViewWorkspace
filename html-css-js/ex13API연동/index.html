@@ -32,12 +32,15 @@
         pointHoverRadius: 15
       }]
     }
+
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
       type: 'line',
       data: data
     });
   }
+
+
   window.onload = async () => {
     const ret = await fetch(OPEN_API).then(res => res.json())
     console.log(ret)

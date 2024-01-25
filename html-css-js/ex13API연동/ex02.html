@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="myBtn"> 누르시오 </button>
+  <div id="output"></div>
+
+</body>
+
+</html>
+
+<script>
+  //randomuser.me 라는 API는 무작위로 생성된 사용자의 프로필 이미지를 포함해 디테일한 정보까지 어디서든 요청 가능합니다.
+
+  document.getElementById("myBtn").addEventListener("click", getData)
+
+  function getData() {
+    // fetch api 참고 자료
+    // https://www.daleseo.com/js-window-fetch/
+    //1. fetch()로 API를 이용합니다.
+    fetch("https://randomuser.me/api/?results=100")
+      .then((res) => res.json()) // 응답을 json 형태로 파싱합니다.
+      .then((data) => {
+        let user = data.results
+        let output = "<h2><center>사용자 정보 받기</center></h2>"
+
+        // 2. forEach()를 사용해서 user의 각 데이터를 output에 추가합니다.
+        user.forEach(function (lists) {
+          output += `
+            <div class="container">
+                <div class="card mt-4 bg-light">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-primary"><h2>Name: ${lists.name.first}</h2></li>
+                        <li class="list-group-item"><img src="${lists.picture.large}"></li>
+                        <li class="list-group-item">Phone Number: ${lists.cell}</li>
+                        <li class="list-group-item">DOB: ${lists.dob.date}</li>
+                        <li class="list-group-item">Age: ${lists.dob.age}</li>
+                        <li class="list-group-item">Email ID: ${lists.email}</li>
+                        <li class="list-group-item">City: ${lists.location.city}</li>
+                        <li class="list-group-item">Country: ${lists.location.country}</li>
+
+                        <li class="list-group-item">PostCode: ${lists.location.postcode}</li>
+
+                    </ul>
+                </div>
+            </div> `
+        })
+        document.getElementById("output").innerHTML = output
+      })
+  }
+
+</script>
