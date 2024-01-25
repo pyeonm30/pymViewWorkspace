@@ -1,0 +1,22 @@
+[{
+    "kind": "고양이",
+    "name": "나비",
+    "age": 10,
+    "toy": ["캣잎", "낚시줄"],
+    "owner": { "name": "jhone" }
+  },
+  {
+    "kind": "강아지",
+    "name": "멍멍이",
+    "age": 3,
+    "toy": ["개뼉다구", "공"],
+    "owner": { "name": "yeonmi" }
+  }, {
+    "kind": "햄스터",
+    "name": "푸틴",
+    "age": 2,
+    "toy": ["챗바퀴", "휴지통"],
+    "owner": { "name": "riko" }
+  }
+
+]
